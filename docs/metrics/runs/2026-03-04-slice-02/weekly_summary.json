@@ -1,0 +1,23 @@
+{
+  "week_start": "2026-03-02T00:00:00+00:00",
+  "domains_analyzed": 55,
+  "cases_opened": 28,
+  "cases_resolved": 0,
+  "average_time_to_action_hours": 4.0,
+  "top_abused_keywords": [
+    "support",
+    "account",
+    "help",
+    "security",
+    "auth"
+  ],
+  "top_abused_tlds": [
+    "com",
+    "net",
+    "org",
+    "site",
+    "xyz"
+  ],
+  "campaign_trends": "Concentrated credential-phishing patterns across shared registrars",
+  "generated_at": "2026-03-04T21:13:44.142363+00:00"
+}

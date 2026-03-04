@@ -46,6 +46,41 @@ Optional explicit output path:
 python3 scripts/run-vertical-slice.py --output docs/demos/vertical-slice-summary.md
 ```
 
+Write structured run artifacts with an explicit run ID:
+
+```bash
+python3 scripts/run-vertical-slice.py --run-id 2026-03-04-slice-01 --artifact-dir docs/metrics/runs
+```
+
+Artifact schema reference:
+
+- `docs/metrics/ARTIFACT_SCHEMA.md`
+- `docs/metrics/runs/index.json` is auto-updated after each run for cross-run comparison.
+
+Compare latest two indexed runs:
+
+```bash
+python3 scripts/compare-runs.py
+```
+
+Compare specific runs:
+
+```bash
+python3 scripts/compare-runs.py --baseline-run-id 2026-03-04-slice-01 --candidate-run-id 2026-03-04-slice-02
+```
+
+Generate weekly run trend report:
+
+```bash
+python3 scripts/report-runs.py
+```
+
+Validate report generation in dry mode:
+
+```bash
+python3 scripts/report-runs.py --dry-run
+```
+
 ## Evidence-First Workflow
 
 - Daily log required at `docs/worklog/YYYY-MM-DD.md`.
