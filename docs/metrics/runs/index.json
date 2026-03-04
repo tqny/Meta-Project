@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "vertical-slice-run-index",
+  "generated_at": "2026-03-04T21:13:44.148119+00:00",
+  "run_count": 2,
+  "runs": [
+    {
+      "run_id": "2026-03-04-slice-02",
+      "generated_at": "2026-03-04T21:13:44.147887+00:00",
+      "sample_size": 55,
+      "high_risk_threshold": 0.68,
+      "seed": 52,
+      "domains": 55,
+      "cases": 28,
+      "campaigns": 27,
+      "vendor_assigned_cases": 28,
+      "summary_markdown_path": "docs/demos/vertical-slice-summary-2026-03-04.md",
+      "run_path": "docs/metrics/runs/2026-03-04-slice-02",
+      "manifest_path": "docs/metrics/runs/2026-03-04-slice-02/manifest.json"
+    },
+    {
+      "run_id": "2026-03-04-slice-01",
+      "generated_at": "2026-03-04T21:10:04.038938+00:00",
+      "sample_size": 50,
+      "high_risk_threshold": 0.7,
+      "seed": 42,
+      "domains": 50,
+      "cases": 29,
+      "campaigns": 32,
+      "vendor_assigned_cases": 29,
+      "summary_markdown_path": "docs/demos/vertical-slice-summary-2026-03-04.md",
+      "run_path": "docs/metrics/runs/2026-03-04-slice-01",
+      "manifest_path": "docs/metrics/runs/2026-03-04-slice-01/manifest.json"
+    }
+  ]
+}

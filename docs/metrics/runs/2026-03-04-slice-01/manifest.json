@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "vertical-slice-run",
+  "run_id": "2026-03-04-slice-01",
+  "generated_at": "2026-03-04T21:10:04.038938+00:00",
+  "config": {
+    "sample_size": 50,
+    "high_risk_threshold": 0.7,
+    "seed": 42
+  },
+  "counts": {
+    "domains": 50,
+    "impersonation_signals": 50,
+    "infrastructure_signals": 50,
+    "threat_assessments": 50,
+    "campaigns": 32,
+    "cases": 29,
+    "vendor_assigned_cases": 29
+  },
+  "summary_markdown_path": "docs/demos/vertical-slice-summary-2026-03-04.md",
+  "files": {
+    "domains": "domains.jsonl",
+    "impersonation_signals": "impersonation_signals.jsonl",
+    "infrastructure_signals": "infrastructure_signals.jsonl",
+    "threat_assessments": "threat_assessments.jsonl",
+    "campaigns": "campaigns.jsonl",
+    "cases": "cases.jsonl",
+    "vendor_assignments": "vendor_assignments.json",
+    "weekly_summary": "weekly_summary.json",
+    "manifest": "manifest.json"
+  }
+}
