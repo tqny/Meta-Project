@@ -19,6 +19,20 @@ This document defines files written by `scripts/run-vertical-slice.py` into `doc
 - `docs/metrics/runs/index.json`: canonical list of all run manifests for run-to-run comparison.
 - Each entry includes config values, key volume fields, and paths back to manifest and summary artifacts.
 
+## Threshold Tuning Artifacts
+
+- `docs/metrics/threshold_tuning/latest.json`: latest threshold sweep artifact.
+- `docs/metrics/threshold_tuning/latest.md`: human-readable threshold tuning report.
+- JSON artifact fields:
+  - `schema_version` (string)
+  - `artifact_type` (string; `threshold-tuning-sweep`)
+  - `generated_at` (ISO-8601 UTC datetime)
+  - `config` (object): sweep inputs and policy guardrails
+  - `evaluated_runs` (integer)
+  - `total_domains` (integer)
+  - `recommendation` (object): threshold, selection mode, rationale
+  - `thresholds` (array): per-threshold metrics (`precision`, `recall`, `f1`, case volume/rate, overflow ratio)
+
 ## Manifest Fields
 
 - `schema_version` (string)

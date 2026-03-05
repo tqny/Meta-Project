@@ -1,6 +1,12 @@
 {
   "name": "brandguard-design-system",
-  "version": "0.0.1",
-  "status": "scaffold",
-  "source": "/Users/tqny/Documents/Project Design/design-hub/distribution"
+  "version": "0.1.0",
+  "status": "active",
+  "source": "/Users/tqny/Documents/Project Design/design-hub/distribution",
+  "outfits": [
+    "idea-01",
+    "idea-02",
+    "idea-03"
+  ],
+  "activeBucketFile": "design-system/buckets/active-bucket.json"
 }
