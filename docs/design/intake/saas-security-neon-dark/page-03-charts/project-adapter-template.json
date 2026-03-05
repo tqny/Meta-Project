@@ -1,0 +1,28 @@
+{
+  "style_id": "saas-security-neon-dark",
+  "page_id": "page-03-charts",
+  "route": "",
+  "module_name": "",
+  "primary_goal": "",
+  "data_source": "",
+  "chart_types": [
+    "stacked_timeline",
+    "multi_series_line",
+    "donut",
+    "mini_trend"
+  ],
+  "filters": {
+    "threat_scope": ["all", "threat", "risk", "residual"],
+    "period_scope": ["days", "weeks", "months"]
+  },
+  "states_required": [
+    "loading",
+    "empty",
+    "error"
+  ],
+  "constraints": {
+    "mobile_first": true,
+    "a11y_level": "WCAG_AA",
+    "preserve_business_logic": true
+  }
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandGuard — Executive Reporting & Global Program</title>
+    <link rel="stylesheet" href="../../design-system/saas-security-neon/tokens.css" />
+    <link rel="stylesheet" href="./assets/security-suite.css" />
+  </head>
+  <body class="theme-saas-security-neon" data-page="exec">
+    <div class="ss-page">
+      <div class="ss-shell">
+        <aside class="ss-rail">
+          <div class="ss-logo" aria-hidden="true">BG</div>
+          <nav class="ss-rail-nav" aria-label="BrandGuard pages">
+            <a class="ss-icon-link" href="./table.html" aria-label="Threat Queue"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Queue</span></a>
+            <a class="ss-icon-link" href="./security-overview.html" aria-label="Case Management"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Cases</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Detail"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Detail</span></a>
+            <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Scan Simulator"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Scan</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Threat Trends"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Trends</span></a>
+            <a class="ss-icon-link" href="./vendor-ops.html" aria-label="Vendor and Registrar Ops"><span class="ss-icon-letter">6</span><span class="ss-icon-text">Ops</span></a>
+            <a class="ss-icon-link is-active" href="./executive-reporting.html" aria-label="Executive Reporting"><span class="ss-icon-letter">7</span><span class="ss-icon-text">Exec</span></a>
+          </nav>
+        </aside>
+
+        <main class="ss-main">
+          <header class="ss-topbar">
+            <div class="ss-topbar-row">
+              <div>
+                <p class="ss-page-kicker">Page 7 / Executive + Global Program</p>
+                <h1 class="ss-page-title">Executive Reporting &amp; Program Governance</h1>
+              </div>
+              <div class="ss-controls">
+                <button id="exec-range-week" class="ss-pill is-active" type="button" data-exec-range="week">Weekly</button>
+                <button id="exec-range-month" class="ss-pill" type="button" data-exec-range="month">Monthly</button>
+              </div>
+            </div>
+            <nav class="ss-page-tabs" aria-label="Workflow Pages">
+              <a class="ss-page-tab" href="./table.html">1. Threat Queue</a>
+              <a class="ss-page-tab" href="./security-overview.html">2. Case Management</a>
+              <a class="ss-page-tab" href="./charts.html">3. Case Detail</a>
+              <a class="ss-page-tab" href="./heatmap.html">4. Domain Scan</a>
+              <a class="ss-page-tab" href="./ui-elements.html">5. Trends</a>
+              <a class="ss-page-tab" href="./vendor-ops.html">6. Vendor/Registrar Ops</a>
+              <a class="ss-page-tab is-active" href="./executive-reporting.html">7. Executive Reporting</a>
+            </nav>
+          </header>
+
+          <section class="ss-content ss-grid">
+            <div class="ss-kpi-row">
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Global Channels Covered</p><h2 id="exec-kpi-channels">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Program Budget (MTD)</p><h2 id="exec-kpi-budget">$0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Executive Risk Posture</p><h2 id="exec-kpi-posture">0</h2></article>
+            </div>
+
+            <div class="ss-two-col ss-two-col-main">
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Off-Platform Channel Coverage</h2></div>
+                <div id="exec-channel-bars" class="ss-bar-list"></div>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Executive Performance Summary</h2></div>
+                <div id="exec-summary-grid" class="ss-kv-grid"></div>
+                <h3 class="ss-subtitle">Priority Watchlist</h3>
+                <ul id="exec-watchlist" class="ss-list"></ul>
+              </article>
+            </div>
+
+            <div class="ss-two-col ss-two-col-main">
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Budget and Enforcement Throughput Trend</h2></div>
+                <svg id="exec-budget-line" class="ss-svg" role="img" aria-label="Budget and throughput trend"></svg>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Process & Protocol Documentation</h2></div>
+                <div id="exec-protocol-bars" class="ss-bar-list"></div>
+              </article>
+            </div>
+
+            <article class="ss-card">
+              <div class="ss-card-title-row"><h2 class="ss-card-title">Executive Communication Feed</h2></div>
+              <ol id="exec-comms" class="ss-timeline"></ol>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="ss-tooltip" class="ss-tooltip ss-hidden" role="status" aria-live="polite"></div>
+    <script type="module" src="./assets/security-suite.js"></script>
+  </body>
+</html>

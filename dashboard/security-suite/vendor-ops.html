@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandGuard — Vendor, Registrar & Legal Ops</title>
+    <link rel="stylesheet" href="../../design-system/saas-security-neon/tokens.css" />
+    <link rel="stylesheet" href="./assets/security-suite.css" />
+  </head>
+  <body class="theme-saas-security-neon" data-page="vendorops">
+    <div class="ss-page">
+      <div class="ss-shell">
+        <aside class="ss-rail">
+          <div class="ss-logo" aria-hidden="true">BG</div>
+          <nav class="ss-rail-nav" aria-label="BrandGuard pages">
+            <a class="ss-icon-link" href="./table.html" aria-label="Threat Queue"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Queue</span></a>
+            <a class="ss-icon-link" href="./security-overview.html" aria-label="Case Management"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Cases</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Detail"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Detail</span></a>
+            <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Scan Simulator"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Scan</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Threat Trends"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Trends</span></a>
+            <a class="ss-icon-link is-active" href="./vendor-ops.html" aria-label="Vendor and Registrar Ops"><span class="ss-icon-letter">6</span><span class="ss-icon-text">Ops</span></a>
+            <a class="ss-icon-link" href="./executive-reporting.html" aria-label="Executive Reporting"><span class="ss-icon-letter">7</span><span class="ss-icon-text">Exec</span></a>
+          </nav>
+        </aside>
+
+        <main class="ss-main">
+          <header class="ss-topbar">
+            <div class="ss-topbar-row">
+              <div>
+                <p class="ss-page-kicker">Page 6 / External Operations</p>
+                <h1 class="ss-page-title">Vendor, Registrar &amp; Legal Operations</h1>
+              </div>
+              <div class="ss-actions">
+                <a class="ss-link-btn ghost" href="./security-overview.html">Back to Cases</a>
+              </div>
+            </div>
+            <nav class="ss-page-tabs" aria-label="Workflow Pages">
+              <a class="ss-page-tab" href="./table.html">1. Threat Queue</a>
+              <a class="ss-page-tab" href="./security-overview.html">2. Case Management</a>
+              <a class="ss-page-tab" href="./charts.html">3. Case Detail</a>
+              <a class="ss-page-tab" href="./heatmap.html">4. Domain Scan</a>
+              <a class="ss-page-tab" href="./ui-elements.html">5. Trends</a>
+              <a class="ss-page-tab is-active" href="./vendor-ops.html">6. Vendor/Registrar Ops</a>
+              <a class="ss-page-tab" href="./executive-reporting.html">7. Executive Reporting</a>
+            </nav>
+          </header>
+
+          <section class="ss-content ss-grid">
+            <div class="ss-kpi-row">
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Vendors in Program</p><h2 id="ops-kpi-vendors">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Registrar Tasks Open</p><h2 id="ops-kpi-registrar">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Legal Escalations</p><h2 id="ops-kpi-legal">0</h2></article>
+            </div>
+
+            <div class="ss-two-col ss-two-col-main">
+              <article class="ss-card">
+                <div class="ss-card-title-row">
+                  <h2 class="ss-card-title">Brand Protection Vendors</h2>
+                  <p id="ops-vendor-summary" class="ss-subtle"></p>
+                </div>
+                <div class="ss-table-wrap">
+                  <table class="ss-table ss-table-wide">
+                    <thead>
+                      <tr>
+                        <th>Vendor</th>
+                        <th>Active Actions</th>
+                        <th>SLA Compliance</th>
+                        <th>Monthly Spend</th>
+                        <th>Contract Renewal</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="ops-vendor-rows"></tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Registrar Operations Queue</h2></div>
+                <div id="ops-registrar-bars" class="ss-bar-list"></div>
+                <h3 class="ss-subtitle">Critical Tasks</h3>
+                <ul id="ops-registrar-list" class="ss-list"></ul>
+              </article>
+            </div>
+
+            <div class="ss-two-col ss-two-col-main">
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">UDRP / Litigation Coordination</h2></div>
+                <div class="ss-table-wrap">
+                  <table class="ss-table ss-table-wide">
+                    <thead>
+                      <tr>
+                        <th>Matter ID</th>
+                        <th>Type</th>
+                        <th>Domain(s)</th>
+                        <th>Outside Counsel</th>
+                        <th>Stage</th>
+                        <th>Next Milestone</th>
+                      </tr>
+                    </thead>
+                    <tbody id="ops-legal-rows"></tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Stakeholder Liaison Activity</h2></div>
+                <ol id="ops-liaison" class="ss-timeline"></ol>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="ss-tooltip" class="ss-tooltip ss-hidden" role="status" aria-live="polite"></div>
+    <script type="module" src="./assets/security-suite.js"></script>
+  </body>
+</html>

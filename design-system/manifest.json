@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "status": "active",
   "source": "/Users/tqny/Documents/Project Design/design-hub/distribution",
+  "buckets": [
+    "firecrawl",
+    "saas-security-neon"
+  ],
   "outfits": [
     "idea-01",
     "idea-02",
