@@ -1,0 +1,276 @@
+{
+  "id": "firecrawl",
+  "name": "Firecrawl Outfit",
+  "style_family": "light-saas-orange",
+  "best_for": [
+    "SaaS marketing sites",
+    "developer product pages",
+    "dashboard shell themes"
+  ],
+  "keywords": [
+    "orange accent",
+    "clean",
+    "technical",
+    "landing page",
+    "conversion"
+  ],
+  "meta": {
+    "idea_id": "firecrawl",
+    "style_name": "Firecrawl Outfit",
+    "inferred_layout_type": "SaaS marketing site with product sections + pricing + docs-style snippets",
+    "confidence_notes": "High confidence on palette hierarchy (white + orange + dark text), section rhythm, and card treatment; medium confidence on exact typeface family."
+  },
+  "visual_dna": {
+    "mood": [
+      "technical",
+      "confident",
+      "clean",
+      "startup-product"
+    ],
+    "density": "medium",
+    "contrast_strategy": "bright white canvas + dark neutral text + high-visibility orange accent",
+    "visual_hierarchy": "hero statement -> proof/features -> pricing -> FAQ -> final CTA"
+  },
+  "tokens": {
+    "color": {
+      "bg": "#FFFFFF",
+      "surface": "#FFFFFF",
+      "surface_alt": "#F8F8F9",
+      "surface_soft": "#FFF4EE",
+      "border": "#ECECEE",
+      "text_primary": "#111114",
+      "text_secondary": "#5D5D66",
+      "text_tertiary": "#8C8C95",
+      "accent_primary": "#FF5A1F",
+      "accent_primary_hover": "#E84E15",
+      "accent_soft": "#FFE3D8",
+      "code_bg": "#121214",
+      "code_text": "#F4F4F6",
+      "success": "#18A957",
+      "warning": "#F6A700",
+      "danger": "#DF3B2D"
+    },
+    "typography": {
+      "font_family_sans": "Inter, ui-sans-serif, system-ui",
+      "font_family_display": "Sora, Inter, ui-sans-serif, system-ui",
+      "weights": {
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      },
+      "scale": {
+        "xs": "12px",
+        "sm": "14px",
+        "md": "16px",
+        "lg": "20px",
+        "xl": "32px",
+        "display": "54px"
+      }
+    },
+    "spacing": {
+      "base_unit": 4,
+      "scale": [
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        32,
+        40,
+        56,
+        72
+      ]
+    },
+    "radius": {
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "22px",
+      "pill": "999px"
+    },
+    "shadow": {
+      "subtle": "0 1px 3px rgba(17,17,20,0.08)",
+      "medium": "0 8px 24px rgba(17,17,20,0.1)",
+      "floating": "0 24px 50px rgba(17,17,20,0.14)"
+    },
+    "motion": {
+      "fast": "120ms",
+      "normal": "220ms",
+      "slow": "360ms",
+      "easing_standard": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "interaction_principles": [
+        "crisp transitions",
+        "small hover lift on cards",
+        "strong CTA feedback",
+        "accordion/tabs for information density"
+      ]
+    }
+  },
+  "layout_system": {
+    "canvas": "centered max-width sections on white background",
+    "max_width": "1180px",
+    "grid_columns_desktop": 12,
+    "grid_columns_mobile": 4,
+    "gutters": {
+      "desktop": "24px",
+      "mobile": "16px"
+    },
+    "section_spacing": "64px"
+  },
+  "components": [
+    {
+      "name": "Top navigation",
+      "variants": [
+        "sticky",
+        "minimal"
+      ],
+      "states": [
+        "default",
+        "hover",
+        "scrolled"
+      ],
+      "notes": "Text-first nav, right-side primary CTA"
+    },
+    {
+      "name": "Hero with code tabs",
+      "variants": [
+        "markdown",
+        "json"
+      ],
+      "states": [
+        "default",
+        "tab-switched"
+      ],
+      "notes": "Headline + compact code/sample panel"
+    },
+    {
+      "name": "Feature grid cards",
+      "variants": [
+        "icon-card",
+        "snippet-card",
+        "metric-card"
+      ],
+      "states": [
+        "default",
+        "hover"
+      ],
+      "notes": "Light borders, subtle elevation, orange micro-accents"
+    },
+    {
+      "name": "Pricing section",
+      "variants": [
+        "starter",
+        "pro",
+        "scale"
+      ],
+      "states": [
+        "monthly",
+        "yearly",
+        "featured-plan"
+      ],
+      "notes": "Orange featured plan edge/highlight"
+    },
+    {
+      "name": "FAQ accordion",
+      "variants": [
+        "single-open"
+      ],
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "notes": "Thin borders and clear icon rotation"
+    },
+    {
+      "name": "Final CTA strip",
+      "variants": [
+        "centered"
+      ],
+      "states": [
+        "default",
+        "hover",
+        "loading"
+      ],
+      "notes": "Strong orange button, concise copy"
+    }
+  ],
+  "interaction_patterns": {
+    "hover": "border tint + tiny translateY(-2px) on cards/buttons",
+    "focus": "2px accent ring",
+    "active": "accent button darkens by ~8%",
+    "disabled": "lower opacity and remove elevation",
+    "loading": "show progress text in CTA or pricing action",
+    "empty": "card with clear setup instruction",
+    "error": "inline lightweight alert with danger token"
+  },
+  "responsive_rules": {
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px"
+    },
+    "behavior": [
+      "Collapse nav links into compact row or menu below md",
+      "Stack hero code panel below headline on tablet/mobile",
+      "Pricing cards switch from 3-column to 1-column on small screens",
+      "Keep primary CTA visible and touch-sized"
+    ]
+  },
+  "dark_mode_rules": {
+    "default_mode": "light-first",
+    "dark_mode_mapping": "optional; if enabled preserve orange emphasis and maintain readable neutral contrast",
+    "contrast_target": "WCAG AA minimum"
+  },
+  "accessibility": {
+    "color_contrast": "AA minimum for all text/buttons",
+    "keyboard": "tabs, accordion, and buttons fully keyboard reachable",
+    "focus_visibility": "tokenized visible outlines",
+    "aria_guidance": "tablist/tabpanel semantics for code tabs, button+region semantics for accordion"
+  },
+  "implementation_rules": [
+    "No hardcoded design values in feature components",
+    "Use token variables for all surfaces and accent states",
+    "Use reusable section components for hero/features/pricing/faq",
+    "Keep behavior modular and data-driven"
+  ],
+  "anti_patterns": [
+    "Using multiple competing accent colors",
+    "Heavy gradients/shadows that break clean technical tone",
+    "Dense text walls with no section rhythm",
+    "Inconsistent button hierarchy"
+  ],
+  "project_adapter_template": {
+    "idea_id": "firecrawl",
+    "project_name": "",
+    "project_type": "marketing-site-or-dashboard-shell",
+    "route": "",
+    "primary_goal": "",
+    "target_users": [],
+    "data_density": "medium",
+    "tone": [
+      "technical",
+      "confident",
+      "clean"
+    ],
+    "constraints": {
+      "mobile_first": true,
+      "a11y_level": "WCAG_AA",
+      "supports_dark_mode": false
+    },
+    "mapping": {
+      "navigation": "sticky_top_nav",
+      "hero": "headline_plus_code_tabs",
+      "proof_section": "feature_cards",
+      "conversion_section": "pricing_toggle_cards",
+      "faq_section": "accordion"
+    },
+    "do_not_change": [
+      "single-accent orange hierarchy",
+      "light neutral foundation",
+      "clean card-and-border visual language"
+    ]
+  }
+}

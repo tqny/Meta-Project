@@ -1,6 +1,6 @@
-# BrandGuard
+# Speculo
 
-BrandGuard is a portfolio prototype simulating how a large technology company detects and prioritizes domain impersonation and routes high-risk findings into an enforcement workflow.
+Speculo is a portfolio prototype simulating how a large technology company detects and prioritizes domain impersonation and routes high-risk findings into an enforcement workflow.
 
 ## Objectives
 
@@ -12,7 +12,7 @@ BrandGuard is a portfolio prototype simulating how a large technology company de
 
 ## Project Status
 
-Scaffolding baseline established. Contract-first architecture and a thin executable vertical slice are in place.
+Scaffolding baseline established. Contract-first architecture, artifact/index/report tooling, and a V1 operations dashboard are in place.
 
 ## Repository Layout
 
@@ -31,6 +31,7 @@ Scaffolding baseline established. Contract-first architecture and a thin executa
 - `contracts.py` defines typed entities for domains, signals, threats, campaigns, cases, recommendations, audit entries, and weekly summaries.
 - `interfaces.py` defines stage boundaries for each pipeline module (generation, detection, scoring, clustering, case creation, recommendation, routing, lifecycle, reporting).
 - `pipeline.py` includes a deterministic vertical slice from domain generation through executive summary output.
+- `product_v1.py` transforms run artifacts into a product-facing queue/detail/vendor/campaign payload.
 
 ## Run Vertical Slice
 
@@ -79,6 +80,58 @@ Validate report generation in dry mode:
 
 ```bash
 python3 scripts/report-runs.py --dry-run
+```
+
+Run threshold tuning sweep and write evidence artifacts:
+
+```bash
+python3 scripts/tune-thresholds.py
+```
+
+Validate threshold tuning in dry mode:
+
+```bash
+python3 scripts/tune-thresholds.py --dry-run
+```
+
+## Product Surfaces
+
+Build dashboard payload from latest indexed run:
+
+```bash
+python3 scripts/build-product-v1.py
+```
+
+The dashboard includes a Threshold Tuning panel when `docs/metrics/threshold_tuning/latest.json` exists.
+
+Serve locally:
+
+```bash
+python3 -m http.server 8080
+```
+
+Open:
+
+- Landing: `http://127.0.0.1:8080/`
+- Operations dashboard: `http://127.0.0.1:8080/dashboard/index.html`
+- Campaign lab: `http://127.0.0.1:8080/dashboard/campaigns.html`
+
+## Design Hub Workflow (Primary + Harvest)
+
+- Primary visual token authority: `design-system/firecrawl/tokens.css`
+- Root class for dashboard surface: `.theme-firecrawl`
+- Composition package:
+  - `design-system/compositions/firecrawl-speculo-brandguard-operations-console-for-predictive-domain-abuse-enforcement-case-q-202603041455/`
+- Traceability:
+  - `docs/design/primary-harvest-traceability.md`
+
+Run outfit commands (required command phrases):
+
+```bash
+python3 scripts/theme-outfit.py list outfits
+python3 scripts/theme-outfit.py switch to next one
+python3 scripts/theme-outfit.py switch to previous one
+python3 scripts/theme-outfit.py switch to idea-02
 ```
 
 ## Evidence-First Workflow
