@@ -1,0 +1,100 @@
+{
+  // Reference: image 04 (heatmap page)
+  "meta": {
+    "style_name": "SaaS Security Neon Dark",
+    "page_id": "page-04-heatmap",
+    "confidence_notes": "High confidence on matrix risk heatmap treatment and donut summary row.",
+    "inferred_layout_type": "threat selector + matrix heatmap + KPI donut trio"
+  },
+  "visual_dna": {
+    "mood": ["risk-oriented", "decisive", "structured"],
+    "density": "medium",
+    "contrast_strategy": "dark panel framing with stepped intensity matrix",
+    "visual_hierarchy": "title/actions -> threat selector -> heatmap matrix -> changes-over-time cards"
+  },
+  "tokens": {
+    "color": {
+      "bg": "#0b0f1d",
+      "surface": "#151a2b",
+      "surface_alt": "#1e2338",
+      "surface_elevated": "#242c45",
+      "border": "#2b3550",
+      "text_primary": "#f3f5ff",
+      "text_secondary": "#b5bdd8",
+      "text_tertiary": "#8f97b5",
+      "accent_primary": "#7a6dff",
+      "accent_secondary": "#72f0e4",
+      "accent_tertiary": "#ea93ff",
+      "chart_lime": "#c8ef6a",
+      "warning": "#ffbf73",
+      "danger": "#ff739d",
+      "success": "#62efc0"
+    },
+    "typography": {
+      "font_family_sans": "Manrope, ui-sans-serif, system-ui, sans-serif",
+      "font_family_display": "Sora, Manrope, ui-sans-serif, sans-serif",
+      "weights": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700 },
+      "scale": { "xs": "11px", "sm": "13px", "md": "15px", "lg": "18px", "xl": "28px", "display": "52px" }
+    },
+    "spacing": { "base_unit": 4, "scale": [4, 8, 12, 16, 20, 24, 32, 40, 56, 72] },
+    "radius": { "sm": "8px", "md": "12px", "lg": "16px", "xl": "22px", "pill": "999px" },
+    "shadow": {
+      "subtle": "0 2px 10px rgba(4,8,20,0.35)",
+      "medium": "0 16px 36px rgba(4,8,20,0.42)",
+      "floating": "0 22px 44px rgba(3,6,18,0.52)"
+    },
+    "motion": {
+      "durations": { "fast": "120ms", "normal": "220ms", "slow": "360ms" },
+      "easings": { "standard": "cubic-bezier(0.2, 0.8, 0.2, 1)", "emphasized": "cubic-bezier(0.25, 1, 0.4, 1)" },
+      "interaction_principles": ["matrix cells react instantly", "low-friction comparisons"]
+    }
+  },
+  "layout_system": {
+    "canvas": "carded layout with main matrix card and summary card",
+    "max_width": "1360px",
+    "grid_columns_desktop": 12,
+    "grid_columns_mobile": 4,
+    "gutters": { "desktop": "28px", "tablet": "20px", "mobile": "14px" },
+    "section_spacing": "20px"
+  },
+  "components": [
+    { "name": "Threat selector", "states": ["default", "focus", "expanded"] },
+    { "name": "Risk heatmap matrix", "states": ["default", "cell_hover", "cell_active", "loading", "empty", "error"], "notes": "5x5 consequence x likelihood matrix" },
+    { "name": "Matrix legend", "states": ["default"], "notes": "maps intensity tiers to score buckets" },
+    { "name": "Changes-over-time donuts", "states": ["default", "hover", "loading"] }
+  ],
+  "interaction_patterns": {
+    "hover": "cell gains border glow and tooltip",
+    "focus": "selector and interactive cells keep visible focus ring",
+    "active": "selected cell persists stronger fill and outline",
+    "disabled": "dimmed control state",
+    "loading": "matrix cell placeholders",
+    "empty": "matrix replaced with no-data frame",
+    "error": "error banner + retry"
+  },
+  "responsive_rules": {
+    "breakpoints": { "sm": "640px", "md": "900px", "lg": "1200px" },
+    "behavior": [
+      "<1200: summary donuts stack 2+1",
+      "<900: matrix remains 5x5 but text labels compact",
+      "<640: matrix container horizontally scrolls with sticky axes labels"
+    ]
+  },
+  "dark_mode_rules": {
+    "default_mode": "dark-only",
+    "contrast_target": "WCAG AA",
+    "contrast_handling": "cell text must remain readable at all intensity levels"
+  },
+  "accessibility": {
+    "color_contrast": "AA minimum",
+    "keyboard": "matrix cells are keyboard addressable via roving tabindex",
+    "focus_visibility": "high-contrast tokenized outline",
+    "aria_guidance": "heatmap grid uses aria-rowcount/aria-colcount and cell labels"
+  },
+  "implementation_rules": {
+    "no_magic_strings": true,
+    "token_enforcement": "all matrix fills and spacing from tokens/derived scales",
+    "primitive_reuse": ["Select", "HeatmapGrid", "DonutCard", "ToolbarButton"]
+  },
+  "anti_patterns": ["heatmap relying only on hue without text labels", "matrix cell sizes that break on mobile"]
+}

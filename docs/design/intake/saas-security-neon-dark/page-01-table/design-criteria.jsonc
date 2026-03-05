@@ -1,0 +1,131 @@
+{
+  // Reference: image 01 (table-centric page)
+  "meta": {
+    "style_name": "SaaS Security Neon Dark",
+    "page_id": "page-01-table",
+    "confidence_notes": "High confidence on dark shell, neon accent palette, compact control bar, and dense table rhythm.",
+    "inferred_layout_type": "left utility rail + top action row + dense data table + footer pagination"
+  },
+  "visual_dna": {
+    "mood": ["analytical", "high-control", "cyber-ops"],
+    "density": "high",
+    "contrast_strategy": "dark neutral base with bright semantic accents and muted separators",
+    "visual_hierarchy": "title/actions -> filters -> table -> pagination"
+  },
+  "tokens": {
+    "color": {
+      "bg": "#0b0f1d",
+      "surface": "#151a2b",
+      "surface_alt": "#1e2338",
+      "surface_elevated": "#242c45",
+      "border": "#2b3550",
+      "text_primary": "#f3f5ff",
+      "text_secondary": "#b5bdd8",
+      "text_tertiary": "#8f97b5",
+      "accent_primary": "#7a6dff",
+      "accent_secondary": "#72f0e4",
+      "accent_tertiary": "#ea93ff",
+      "chart_lime": "#c8ef6a",
+      "warning": "#ffbf73",
+      "danger": "#ff739d",
+      "success": "#62efc0"
+    },
+    "typography": {
+      "font_family_sans": "Manrope, ui-sans-serif, system-ui, sans-serif",
+      "font_family_display": "Sora, Manrope, ui-sans-serif, sans-serif",
+      "weights": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700 },
+      "scale": { "xs": "11px", "sm": "13px", "md": "15px", "lg": "18px", "xl": "28px", "display": "52px" }
+    },
+    "spacing": { "base_unit": 4, "scale": [4, 8, 12, 16, 20, 24, 32, 40, 56, 72] },
+    "radius": { "sm": "8px", "md": "12px", "lg": "16px", "xl": "22px", "pill": "999px" },
+    "shadow": {
+      "subtle": "0 2px 10px rgba(4,8,20,0.35)",
+      "medium": "0 16px 36px rgba(4,8,20,0.42)",
+      "floating": "0 22px 44px rgba(3,6,18,0.52)"
+    },
+    "motion": {
+      "durations": { "fast": "120ms", "normal": "220ms", "slow": "360ms" },
+      "easings": { "standard": "cubic-bezier(0.2, 0.8, 0.2, 1)", "emphasized": "cubic-bezier(0.25, 1, 0.4, 1)" },
+      "interaction_principles": ["soft neon feedback", "minimal movement", "clear focus ring"]
+    }
+  },
+  "layout_system": {
+    "canvas": "full-bleed dark gradient with centered app shell",
+    "max_width": "1360px",
+    "grid_columns_desktop": 12,
+    "grid_columns_mobile": 4,
+    "gutters": { "desktop": "28px", "tablet": "20px", "mobile": "14px" },
+    "section_spacing": "20px"
+  },
+  "components": [
+    {
+      "name": "Vertical icon rail",
+      "states": ["default", "hover", "active"],
+      "notes": "44x44 hit targets, active item has surface_elevated fill and subtle glow"
+    },
+    {
+      "name": "Top filter bar",
+      "states": ["default", "focus", "expanded"],
+      "notes": "search + division select + action buttons"
+    },
+    {
+      "name": "Data table",
+      "states": ["default", "row_hover", "row_selected", "sorting", "loading", "empty", "error"],
+      "notes": "sticky header, density-first row sizing"
+    },
+    {
+      "name": "Issue composition pills",
+      "states": ["default"],
+      "notes": "multi-dot distribution with percentages"
+    },
+    {
+      "name": "Reply progress bar",
+      "states": ["default", "hover"],
+      "notes": "gradient fill and value label"
+    },
+    {
+      "name": "Pagination",
+      "states": ["default", "hover", "active", "disabled"],
+      "notes": "compact chip pagination + page-size select"
+    }
+  ],
+  "interaction_patterns": {
+    "hover": "rows shift to surface_elevated, controls brighten by 8%",
+    "focus": "2px accent_primary ring with 2px offset",
+    "active": "pressed controls drop shadow depth and darken 6%",
+    "disabled": "55% opacity, pointer-events none",
+    "loading": "table skeleton rows and animated shimmer",
+    "empty": "single centered empty card with next action",
+    "error": "inline critical banner with retry action"
+  },
+  "responsive_rules": {
+    "breakpoints": { "sm": "640px", "md": "900px", "lg": "1200px" },
+    "behavior": [
+      "<1200: collapse table to horizontal scroll container",
+      "<900: rail shrinks to icon-only mini rail",
+      "<900: action buttons move under filter row",
+      "<640: pagination reduces to prev/next + current"
+    ]
+  },
+  "dark_mode_rules": {
+    "default_mode": "dark-only",
+    "contrast_target": "WCAG AA",
+    "contrast_handling": "primary text >= 4.5:1, small labels >= 4.5:1"
+  },
+  "accessibility": {
+    "color_contrast": "AA text and controls",
+    "keyboard": "full tab sequence through rail, filters, table rows, pagination",
+    "focus_visibility": "consistent tokenized ring",
+    "aria_guidance": "table semantics with sortable header buttons and aria-sort"
+  },
+  "implementation_rules": {
+    "no_magic_strings": true,
+    "token_enforcement": "all spacing, color, radius, shadow, duration use CSS vars",
+    "primitive_reuse": ["Button", "Input", "Select", "DataTable", "ProgressBar", "Paginator"]
+  },
+  "anti_patterns": [
+    "hard-coded per-row colors in component logic",
+    "mixing alternate accent families",
+    "oversized spacing that reduces data density"
+  ]
+}

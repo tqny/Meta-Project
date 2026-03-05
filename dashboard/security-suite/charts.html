@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Protection Control Center — Case Investigation</title>
+    <link rel="stylesheet" href="../../design-system/saas-security-neon/tokens.css" />
+    <link rel="stylesheet" href="./assets/security-suite.css" />
+  </head>
+  <body class="theme-saas-security-neon" data-page="investigation">
+    <div class="ss-page">
+      <div class="ss-shell">
+        <aside class="ss-rail">
+          <div class="ss-logo" aria-hidden="true">BG</div>
+          <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
+            <a class="ss-icon-link" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
+            <a class="ss-icon-link" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
+            <a class="ss-icon-link is-active" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+          </nav>
+        </aside>
+
+        <main class="ss-main">
+          <header class="ss-topbar">
+            <div class="ss-topbar-row">
+              <div>
+                <p class="ss-page-kicker">Page 3 / Case Detail + Explainability</p>
+                <h1 class="ss-page-title">Case Investigation View</h1>
+              </div>
+              <div class="ss-actions">
+                <a class="ss-link-btn ghost" href="./table.html">Back to Queue</a>
+              </div>
+            </div>
+            <nav class="ss-page-tabs" aria-label="Workflow Pages">
+              <a class="ss-page-tab" href="./security-overview.html">1. Operations Overview</a>
+              <a class="ss-page-tab" href="./table.html">2. Case Queue</a>
+              <a class="ss-page-tab is-active" href="./charts.html">3. Case Investigation</a>
+              <a class="ss-page-tab" href="./heatmap.html">4. Domain Portfolio</a>
+              <a class="ss-page-tab" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
+            </nav>
+            <div class="ss-topbar-row">
+              <label class="ss-field">
+                <span>Select Case</span>
+                <select id="investigation-case-select" class="ss-select"></select>
+              </label>
+              <p id="investigation-meta" class="ss-subtle"></p>
+            </div>
+          </header>
+
+          <section class="ss-content ss-grid">
+            <div id="investigation-empty" class="ss-empty">No case selected. Open a case from the queue to review evidence and actions.</div>
+
+            <div id="investigation-panel" class="ss-grid ss-hidden">
+              <div class="ss-two-col ss-two-col-main">
+                <article class="ss-card">
+                  <div class="ss-card-title-row"><h2 class="ss-card-title">Case Information</h2></div>
+                  <div id="investigation-case-grid" class="ss-kv-grid"></div>
+                  <h3 class="ss-subtitle">Domain / Asset Context</h3>
+                  <div id="investigation-asset-grid" class="ss-kv-grid"></div>
+                </article>
+
+                <article class="ss-card">
+                  <div class="ss-card-title-row"><h2 class="ss-card-title">AI Assist Panel</h2></div>
+                  <p id="investigation-ai-summary" class="ss-subtle"></p>
+                  <p id="investigation-ai-category" class="ss-subtle"></p>
+                  <p id="investigation-ai-action" class="ss-subtle"></p>
+                  <h3 class="ss-subtitle">Action Buttons</h3>
+                  <div class="ss-actions">
+                    <button id="investigation-send-vendor" class="ss-btn primary" type="button">Send Vendor Request</button>
+                    <button id="investigation-escalate-legal" class="ss-btn" type="button">Escalate to Legal</button>
+                    <button id="investigation-close-case" class="ss-btn ghost" type="button">Close Case</button>
+                  </div>
+                </article>
+              </div>
+
+              <div class="ss-two-col ss-two-col-main">
+                <article class="ss-card">
+                  <div class="ss-card-title-row"><h2 class="ss-card-title">Evidence Links</h2></div>
+                  <ul id="investigation-evidence" class="ss-list"></ul>
+                </article>
+
+                <article class="ss-card">
+                  <div class="ss-card-title-row"><h2 class="ss-card-title">Enforcement Activity</h2></div>
+                  <ul id="investigation-enforcement-log" class="ss-list"></ul>
+                </article>
+              </div>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Case Timeline</h2></div>
+                <ol id="investigation-timeline" class="ss-timeline"></ol>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="ss-tooltip" class="ss-tooltip ss-hidden" role="status" aria-live="polite"></div>
+    <script type="module" src="./assets/security-suite.js"></script>
+  </body>
+</html>

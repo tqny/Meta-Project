@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Protection Control Center — Case Queue</title>
+    <link rel="stylesheet" href="../../design-system/saas-security-neon/tokens.css" />
+    <link rel="stylesheet" href="./assets/security-suite.css" />
+  </head>
+  <body class="theme-saas-security-neon" data-page="queue">
+    <div class="ss-page">
+      <div class="ss-shell">
+        <aside class="ss-rail">
+          <div class="ss-logo" aria-hidden="true">BG</div>
+          <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
+            <a class="ss-icon-link" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
+            <a class="ss-icon-link is-active" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+          </nav>
+        </aside>
+
+        <main class="ss-main">
+          <header class="ss-topbar">
+            <div class="ss-topbar-row">
+              <div>
+                <p class="ss-page-kicker">Page 2 / Core Workflow</p>
+                <h1 class="ss-page-title">Threat Intake &amp; Case Queue</h1>
+              </div>
+              <div class="ss-actions">
+                <a class="ss-link-btn ghost" href="./security-overview.html">Back to Overview</a>
+              </div>
+            </div>
+            <nav class="ss-page-tabs" aria-label="Workflow Pages">
+              <a class="ss-page-tab" href="./security-overview.html">1. Operations Overview</a>
+              <a class="ss-page-tab is-active" href="./table.html">2. Case Queue</a>
+              <a class="ss-page-tab" href="./charts.html">3. Case Investigation</a>
+              <a class="ss-page-tab" href="./heatmap.html">4. Domain Portfolio</a>
+              <a class="ss-page-tab" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
+            </nav>
+            <div class="ss-topbar-row">
+              <div class="ss-controls">
+                <label class="ss-field">
+                  <span>Search Cases</span>
+                  <input id="queue-search" class="ss-input" type="search" placeholder="case id, title, owner" />
+                </label>
+                <label class="ss-field">
+                  <span>Channel</span>
+                  <select id="queue-channel-filter" class="ss-select"></select>
+                </label>
+                <label class="ss-field">
+                  <span>Threat Type</span>
+                  <select id="queue-threat-filter" class="ss-select"></select>
+                </label>
+                <label class="ss-field">
+                  <span>Status</span>
+                  <select id="queue-status-filter" class="ss-select"></select>
+                </label>
+              </div>
+            </div>
+          </header>
+
+          <section class="ss-content ss-grid">
+            <div class="ss-kpi-row ss-kpi-compact">
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Cases in View</p><h2 id="queue-kpi-total">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Critical Priority</p><h2 id="queue-kpi-critical">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">New Cases</p><h2 id="queue-kpi-new">0</h2></article>
+            </div>
+
+            <div class="ss-two-col ss-two-col-main">
+              <article class="ss-card">
+                <div class="ss-card-title-row">
+                  <h2 class="ss-card-title">Case Queue</h2>
+                  <p id="queue-summary" class="ss-subtle"></p>
+                </div>
+                <div id="queue-state" class="ss-hidden" aria-live="polite"></div>
+                <div class="ss-table-wrap">
+                  <table class="ss-table ss-table-wide">
+                    <thead>
+                      <tr>
+                        <th>Case ID</th>
+                        <th>Channel</th>
+                        <th>Threat Type</th>
+                        <th>Risk Score</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Owner</th>
+                        <th>Created</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody id="queue-rows"></tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row">
+                  <h2 class="ss-card-title">Selected Case Actions</h2>
+                  <a id="queue-open-case" class="ss-link-btn" href="./charts.html">Open Investigation</a>
+                </div>
+                <div id="queue-selected-empty" class="ss-empty">Select a case row to edit status, owner, notes, and priority.</div>
+                <div id="queue-selected-panel" class="ss-hidden">
+                  <div id="queue-kv-grid" class="ss-kv-grid"></div>
+
+                  <h3 class="ss-subtitle">Workflow Actions</h3>
+                  <div class="ss-controls">
+                    <label class="ss-field">
+                      <span>Set Status</span>
+                      <select id="queue-status-select" class="ss-select"></select>
+                    </label>
+                    <button id="queue-update-status" class="ss-btn" type="button">Update Status</button>
+                  </div>
+
+                  <div class="ss-controls">
+                    <label class="ss-field">
+                      <span>Assign Owner</span>
+                      <input id="queue-owner-input" class="ss-input" type="text" placeholder="owner name" />
+                    </label>
+                    <button id="queue-save-owner" class="ss-btn" type="button">Save Owner</button>
+                  </div>
+
+                  <label class="ss-field">
+                    <span>Add Note</span>
+                    <textarea id="queue-note-input" class="ss-textarea" rows="3" placeholder="add operational note"></textarea>
+                  </label>
+                  <div class="ss-controls">
+                    <button id="queue-add-note" class="ss-btn" type="button">Add Note</button>
+                    <button id="queue-escalate" class="ss-btn primary" type="button">Escalate Priority</button>
+                  </div>
+
+                  <h3 class="ss-subtitle">Recent Notes</h3>
+                  <ol id="queue-notes" class="ss-timeline"></ol>
+                </div>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="ss-tooltip" class="ss-tooltip ss-hidden" role="status" aria-live="polite"></div>
+    <script type="module" src="./assets/security-suite.js"></script>
+  </body>
+</html>

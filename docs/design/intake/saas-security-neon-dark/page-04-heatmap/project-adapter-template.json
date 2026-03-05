@@ -1,0 +1,39 @@
+{
+  "style_id": "saas-security-neon-dark",
+  "page_id": "page-04-heatmap",
+  "route": "",
+  "module_name": "",
+  "primary_goal": "",
+  "data_source": "",
+  "matrix_definition": {
+    "rows": [
+      "very_likely",
+      "most_likely",
+      "likely",
+      "unlikely",
+      "very_unlikely"
+    ],
+    "columns": [
+      "low",
+      "moderate",
+      "high",
+      "very_high",
+      "catastrophic"
+    ]
+  },
+  "interactions": {
+    "enable_cell_hover": true,
+    "enable_cell_select": true,
+    "enable_threat_switch": true
+  },
+  "states_required": [
+    "loading",
+    "empty",
+    "error"
+  ],
+  "constraints": {
+    "mobile_first": true,
+    "a11y_level": "WCAG_AA",
+    "preserve_business_logic": true
+  }
+}

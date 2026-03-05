@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Protection Control Center — Operations Overview</title>
+    <link rel="stylesheet" href="../../design-system/saas-security-neon/tokens.css" />
+    <link rel="stylesheet" href="./assets/security-suite.css" />
+  </head>
+  <body class="theme-saas-security-neon" data-page="overview">
+    <div class="ss-page">
+      <div class="ss-shell">
+        <aside class="ss-rail">
+          <div class="ss-logo" aria-hidden="true">BG</div>
+          <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
+            <a class="ss-icon-link is-active" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
+            <a class="ss-icon-link" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+          </nav>
+        </aside>
+
+        <main class="ss-main">
+          <header class="ss-topbar">
+            <div class="ss-topbar-row">
+              <div>
+                <p class="ss-page-kicker">Page 1 / Executive Snapshot</p>
+                <h1 class="ss-page-title">Operations Overview</h1>
+              </div>
+              <div class="ss-actions">
+                <a class="ss-link-btn primary" href="./table.html">Open Case Queue</a>
+              </div>
+            </div>
+            <nav class="ss-page-tabs" aria-label="Workflow Pages">
+              <a class="ss-page-tab is-active" href="./security-overview.html">1. Operations Overview</a>
+              <a class="ss-page-tab" href="./table.html">2. Case Queue</a>
+              <a class="ss-page-tab" href="./charts.html">3. Case Investigation</a>
+              <a class="ss-page-tab" href="./heatmap.html">4. Domain Portfolio</a>
+              <a class="ss-page-tab" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
+            </nav>
+            <div class="ss-controls">
+              <button id="overview-range-all" class="ss-pill is-active" type="button" data-overview-range="all">All Activity</button>
+              <button id="overview-range-week" class="ss-pill" type="button" data-overview-range="week">Last 7 Days</button>
+            </div>
+          </header>
+
+          <section class="ss-content ss-grid">
+            <div class="ss-kpi-row ss-kpi-compact">
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Open Cases</p><h2 id="overview-kpi-open">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">High Priority Incidents</p><h2 id="overview-kpi-high">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Domains Flagged This Week</p><h2 id="overview-kpi-domains">0</h2></article>
+            </div>
+
+            <div class="ss-kpi-row ss-kpi-compact">
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Vendor SLA Breaches</p><h2 id="overview-kpi-breaches">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Average Time to Triage</p><h2 id="overview-kpi-triage">0h</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Average Time to Close</p><h2 id="overview-kpi-close">0h</h2></article>
+            </div>
+
+            <div class="ss-two-col ss-two-col-main">
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Threat Volume Over Time</h2></div>
+                <svg id="overview-volume-line" class="ss-svg" role="img" aria-label="Threat volume and closure trend"></svg>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Threats by Channel</h2></div>
+                <div id="overview-channel-bars" class="ss-bar-list"></div>
+              </article>
+            </div>
+
+            <div class="ss-two-col ss-two-col-main">
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Threats by Type</h2></div>
+                <div id="overview-type-bars" class="ss-bar-list"></div>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Executive Summary</h2></div>
+                <p id="overview-summary" class="ss-subtle"></p>
+                <h3 class="ss-subtitle">Watchlist</h3>
+                <ul id="overview-watchlist" class="ss-list"></ul>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="ss-tooltip" class="ss-tooltip ss-hidden" role="status" aria-live="polite"></div>
+    <script type="module" src="./assets/security-suite.js"></script>
+  </body>
+</html>

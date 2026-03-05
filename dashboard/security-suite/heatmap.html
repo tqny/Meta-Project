@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Protection Control Center — Domain Portfolio</title>
+    <link rel="stylesheet" href="../../design-system/saas-security-neon/tokens.css" />
+    <link rel="stylesheet" href="./assets/security-suite.css" />
+  </head>
+  <body class="theme-saas-security-neon" data-page="domains">
+    <div class="ss-page">
+      <div class="ss-shell">
+        <aside class="ss-rail">
+          <div class="ss-logo" aria-hidden="true">BG</div>
+          <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
+            <a class="ss-icon-link" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
+            <a class="ss-icon-link" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link is-active" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+          </nav>
+        </aside>
+
+        <main class="ss-main">
+          <header class="ss-topbar">
+            <div class="ss-topbar-row">
+              <div>
+                <p class="ss-page-kicker">Page 4 / Domain Operations</p>
+                <h1 class="ss-page-title">Domain Portfolio Dashboard</h1>
+              </div>
+              <div class="ss-actions">
+                <a class="ss-link-btn ghost" href="./table.html">Back to Queue</a>
+              </div>
+            </div>
+            <nav class="ss-page-tabs" aria-label="Workflow Pages">
+              <a class="ss-page-tab" href="./security-overview.html">1. Operations Overview</a>
+              <a class="ss-page-tab" href="./table.html">2. Case Queue</a>
+              <a class="ss-page-tab" href="./charts.html">3. Case Investigation</a>
+              <a class="ss-page-tab is-active" href="./heatmap.html">4. Domain Portfolio</a>
+              <a class="ss-page-tab" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
+            </nav>
+            <div class="ss-topbar-row">
+              <label class="ss-field">
+                <span>Search Domains</span>
+                <input id="domains-search" class="ss-input" type="search" placeholder="domain, registrar, flag" />
+              </label>
+              <label class="ss-field">
+                <span>Status Filter</span>
+                <select id="domains-status-filter" class="ss-select"></select>
+              </label>
+            </div>
+          </header>
+
+          <section class="ss-content ss-grid">
+            <div class="ss-kpi-row ss-kpi-compact">
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Total Domains</p><h2 id="domains-kpi-total">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Monitoring</p><h2 id="domains-kpi-monitoring">0</h2></article>
+              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Incident Domains</p><h2 id="domains-kpi-incident">0</h2></article>
+            </div>
+
+            <div class="ss-two-col ss-two-col-main">
+              <article class="ss-card">
+                <div class="ss-card-title-row">
+                  <h2 class="ss-card-title">Domain Portfolio</h2>
+                  <p id="domains-summary" class="ss-subtle"></p>
+                </div>
+                <div class="ss-table-wrap">
+                  <table class="ss-table ss-table-wide">
+                    <thead>
+                      <tr>
+                        <th>Domain</th>
+                        <th>Registrar</th>
+                        <th>Expiration</th>
+                        <th>Security Status</th>
+                        <th>Status</th>
+                        <th>Risk Alerts</th>
+                      </tr>
+                    </thead>
+                    <tbody id="domains-rows"></tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row"><h2 class="ss-card-title">Domain Detail</h2></div>
+                <div id="domains-empty" class="ss-empty">Select a domain to inspect risk flags and registrar history.</div>
+                <div id="domains-panel" class="ss-hidden">
+                  <div id="domains-detail-grid" class="ss-kv-grid"></div>
+                  <h3 class="ss-subtitle">Risk Flags</h3>
+                  <div id="domains-risk-flags" class="ss-chip-row"></div>
+
+                  <h3 class="ss-subtitle">Linked Cases</h3>
+                  <ul id="domains-linked-cases" class="ss-list"></ul>
+
+                  <h3 class="ss-subtitle">Registrar Action Log</h3>
+                  <ol id="domains-log" class="ss-timeline"></ol>
+
+                  <label class="ss-field">
+                    <span>Add Registrar Action Note</span>
+                    <textarea id="domains-log-input" class="ss-textarea" rows="3" placeholder="log registrar communication or task update"></textarea>
+                  </label>
+                  <button id="domains-log-add" class="ss-btn" type="button">Add Log Entry</button>
+                </div>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="ss-tooltip" class="ss-tooltip ss-hidden" role="status" aria-live="polite"></div>
+    <script type="module" src="./assets/security-suite.js"></script>
+  </body>
+</html>

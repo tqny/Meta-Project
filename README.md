@@ -116,6 +116,18 @@ Open:
 - Operations dashboard: `http://127.0.0.1:8080/dashboard/index.html`
 - Campaign lab: `http://127.0.0.1:8080/dashboard/campaigns.html`
 
+Install reusable design bucket into another project:
+
+```bash
+python3 scripts/install-bucket.py --bucket saas-security-neon --target /ABSOLUTE/TARGET/PATH
+```
+
+Run security suite structural smoke checks:
+
+```bash
+node tests/security_suite_smoke.mjs
+```
+
 ## Design Hub Workflow (Primary + Harvest)
 
 - Primary visual token authority: `design-system/firecrawl/tokens.css`

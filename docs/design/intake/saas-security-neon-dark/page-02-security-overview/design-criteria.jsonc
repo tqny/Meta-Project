@@ -1,0 +1,106 @@
+{
+  // Reference: image 02 (security management overview)
+  "meta": {
+    "style_name": "SaaS Security Neon Dark",
+    "page_id": "page-02-security-overview",
+    "confidence_notes": "High confidence on hero-title framing, stacked analytics cards, and neon chart language.",
+    "inferred_layout_type": "title masthead + controls + analytics dashboard mosaic"
+  },
+  "visual_dna": {
+    "mood": ["executive", "futuristic", "signal-rich"],
+    "density": "medium-high",
+    "contrast_strategy": "dark field + vibrant micro-accents for data layers",
+    "visual_hierarchy": "masthead -> controls -> main trend chart -> score cards"
+  },
+  "tokens": {
+    "color": {
+      "bg": "#0b0f1d",
+      "surface": "#151a2b",
+      "surface_alt": "#1e2338",
+      "surface_elevated": "#242c45",
+      "border": "#2b3550",
+      "text_primary": "#f3f5ff",
+      "text_secondary": "#b5bdd8",
+      "text_tertiary": "#8f97b5",
+      "accent_primary": "#7a6dff",
+      "accent_secondary": "#72f0e4",
+      "accent_tertiary": "#ea93ff",
+      "chart_lime": "#c8ef6a",
+      "warning": "#ffbf73",
+      "danger": "#ff739d",
+      "success": "#62efc0"
+    },
+    "typography": {
+      "font_family_sans": "Manrope, ui-sans-serif, system-ui, sans-serif",
+      "font_family_display": "Sora, Manrope, ui-sans-serif, sans-serif",
+      "weights": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700 },
+      "scale": { "xs": "11px", "sm": "13px", "md": "15px", "lg": "18px", "xl": "28px", "display": "52px" }
+    },
+    "spacing": { "base_unit": 4, "scale": [4, 8, 12, 16, 20, 24, 32, 40, 56, 72] },
+    "radius": { "sm": "8px", "md": "12px", "lg": "16px", "xl": "22px", "pill": "999px" },
+    "shadow": {
+      "subtle": "0 2px 10px rgba(4,8,20,0.35)",
+      "medium": "0 16px 36px rgba(4,8,20,0.42)",
+      "floating": "0 22px 44px rgba(3,6,18,0.52)"
+    },
+    "motion": {
+      "durations": { "fast": "120ms", "normal": "220ms", "slow": "360ms" },
+      "easings": { "standard": "cubic-bezier(0.2, 0.8, 0.2, 1)", "emphasized": "cubic-bezier(0.25, 1, 0.4, 1)" },
+      "interaction_principles": ["chart emphasis on hover", "minimal camera movement", "stable dashboard shell"]
+    }
+  },
+  "layout_system": {
+    "canvas": "full page dashboard shell with top masthead",
+    "max_width": "1360px",
+    "grid_columns_desktop": 12,
+    "grid_columns_mobile": 4,
+    "gutters": { "desktop": "28px", "tablet": "20px", "mobile": "14px" },
+    "section_spacing": "24px"
+  },
+  "components": [
+    { "name": "Masthead title", "states": ["default"], "notes": "all-caps display title with supporting metadata" },
+    { "name": "Global toolbar", "states": ["default", "focus", "active"], "notes": "division selector, locale selector, profile menu" },
+    { "name": "Risk timeline bars", "states": ["default", "hover", "tooltip"], "notes": "grouped neon vertical bars by date" },
+    { "name": "Threat/Risk line trend", "states": ["default", "hover", "series_toggle"], "notes": "multi-series line chart" },
+    { "name": "Score cards", "states": ["default", "loading", "error"], "notes": "donut + sparkline + incident chart cards" }
+  ],
+  "interaction_patterns": {
+    "hover": "chart points and bars increase brightness and show tooltip",
+    "focus": "inputs/buttons keep high-contrast focus ring",
+    "active": "selected tab/filter pill keeps accent fill",
+    "disabled": "desaturated + no shadow",
+    "loading": "skeleton placeholders for charts",
+    "empty": "chart card with no-data message and reset filters action",
+    "error": "card-level retry with error description"
+  },
+  "responsive_rules": {
+    "breakpoints": { "sm": "640px", "md": "900px", "lg": "1200px" },
+    "behavior": [
+      "<1200: score cards stack in one column",
+      "<900: masthead wraps title and actions into two rows",
+      "<900: timeline chart allows horizontal scroll",
+      "<640: reduce title size and compress control spacing"
+    ]
+  },
+  "dark_mode_rules": {
+    "default_mode": "dark-only",
+    "contrast_target": "WCAG AA",
+    "contrast_handling": "avoid low-alpha text over gradients"
+  },
+  "accessibility": {
+    "color_contrast": "AA minimum",
+    "keyboard": "toolbar controls and chart toggles keyboard reachable",
+    "focus_visibility": "tokenized focus ring",
+    "aria_guidance": "charts include aria-label and textual summary fallback"
+  },
+  "implementation_rules": {
+    "no_magic_strings": true,
+    "token_enforcement": "all visual values from CSS variables",
+    "primitive_reuse": ["AppShell", "Topbar", "Card", "FilterPill", "ChartPanel"]
+  },
+  "anti_patterns": [
+    "chart palettes outside shared accent family",
+    "detached masthead styles not reused by other pages",
+    "non-semantic chart markup with no labels"
+  ]
+}

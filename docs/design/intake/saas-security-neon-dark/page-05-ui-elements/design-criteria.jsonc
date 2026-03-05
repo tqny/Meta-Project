@@ -1,0 +1,102 @@
+{
+  // Reference: image 05 (UI elements + mixed modules)
+  "meta": {
+    "style_name": "SaaS Security Neon Dark",
+    "page_id": "page-05-ui-elements",
+    "confidence_notes": "High confidence on component gallery style: toolbar controls, range slider, mixed chart and record row.",
+    "inferred_layout_type": "controls strip + mixed widgets + expandable record card"
+  },
+  "visual_dna": {
+    "mood": ["modular", "tooling-focused", "interactive"],
+    "density": "medium-high",
+    "contrast_strategy": "dark shell with segmented surfaces and neon highlights",
+    "visual_hierarchy": "toolbar -> slider -> status cards/charts -> expanded record row"
+  },
+  "tokens": {
+    "color": {
+      "bg": "#0b0f1d",
+      "surface": "#151a2b",
+      "surface_alt": "#1e2338",
+      "surface_elevated": "#242c45",
+      "border": "#2b3550",
+      "text_primary": "#f3f5ff",
+      "text_secondary": "#b5bdd8",
+      "text_tertiary": "#8f97b5",
+      "accent_primary": "#7a6dff",
+      "accent_secondary": "#72f0e4",
+      "accent_tertiary": "#ea93ff",
+      "chart_lime": "#c8ef6a",
+      "warning": "#ffbf73",
+      "danger": "#ff739d",
+      "success": "#62efc0"
+    },
+    "typography": {
+      "font_family_sans": "Manrope, ui-sans-serif, system-ui, sans-serif",
+      "font_family_display": "Sora, Manrope, ui-sans-serif, sans-serif",
+      "weights": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700 },
+      "scale": { "xs": "11px", "sm": "13px", "md": "15px", "lg": "18px", "xl": "28px", "display": "52px" }
+    },
+    "spacing": { "base_unit": 4, "scale": [4, 8, 12, 16, 20, 24, 32, 40, 56, 72] },
+    "radius": { "sm": "8px", "md": "12px", "lg": "16px", "xl": "22px", "pill": "999px" },
+    "shadow": {
+      "subtle": "0 2px 10px rgba(4,8,20,0.35)",
+      "medium": "0 16px 36px rgba(4,8,20,0.42)",
+      "floating": "0 22px 44px rgba(3,6,18,0.52)"
+    },
+    "motion": {
+      "durations": { "fast": "120ms", "normal": "220ms", "slow": "360ms" },
+      "easings": { "standard": "cubic-bezier(0.2, 0.8, 0.2, 1)", "emphasized": "cubic-bezier(0.25, 1, 0.4, 1)" },
+      "interaction_principles": ["clear component affordance", "compact yet touch-safe hit areas"]
+    }
+  },
+  "layout_system": {
+    "canvas": "modular control-first layout",
+    "max_width": "1360px",
+    "grid_columns_desktop": 12,
+    "grid_columns_mobile": 4,
+    "gutters": { "desktop": "28px", "tablet": "20px", "mobile": "14px" },
+    "section_spacing": "18px"
+  },
+  "components": [
+    { "name": "Toolbar controls", "states": ["default", "hover", "active", "focus", "disabled"], "notes": "profile select, locale select, action buttons, icon controls" },
+    { "name": "Range slider", "states": ["default", "focus", "dragging"], "notes": "single-value range with live label" },
+    { "name": "Implementation status donut", "states": ["default", "hover", "loading", "empty"] },
+    { "name": "Deadline mini-card", "states": ["default", "hover"] },
+    { "name": "Trend line strip", "states": ["default", "hover"] },
+    { "name": "Expandable incident row", "states": ["collapsed", "expanded", "selected"] }
+  ],
+  "interaction_patterns": {
+    "hover": "controls brighten and elevate slightly",
+    "focus": "consistent visible ring for all controls",
+    "active": "pressed state lowers elevation",
+    "disabled": "muted and non-interactive",
+    "loading": "donut/trend placeholders",
+    "empty": "status panel instructs to add incidents",
+    "error": "inline notification with retry"
+  },
+  "responsive_rules": {
+    "breakpoints": { "sm": "640px", "md": "900px", "lg": "1200px" },
+    "behavior": [
+      "<1200: toolbar actions wrap to multiple rows",
+      "<900: deadline card moves under status chart",
+      "<640: incident row becomes stacked fields"
+    ]
+  },
+  "dark_mode_rules": {
+    "default_mode": "dark-only",
+    "contrast_target": "WCAG AA",
+    "contrast_handling": "keep icon-only controls with clear labels/tooltips"
+  },
+  "accessibility": {
+    "color_contrast": "AA minimum",
+    "keyboard": "all toolbar controls, slider, and expandable row accessible",
+    "focus_visibility": "tokenized 2px accent outline",
+    "aria_guidance": "expandable row uses button + aria-expanded + region"
+  },
+  "implementation_rules": {
+    "no_magic_strings": true,
+    "token_enforcement": "component styles rely on shared CSS vars",
+    "primitive_reuse": ["Toolbar", "IconButton", "Range", "DonutCard", "ExpandableRow"]
+  },
+  "anti_patterns": ["icon-only actions without accessible names", "range slider lacking keyboard support"]
+}

@@ -1,0 +1,222 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]: BG
+    - navigation "Brand Protection Control Center pages" [ref=e6]:
+      - link "Operations Overview" [ref=e7] [cursor=pointer]:
+        - /url: ./security-overview.html
+        - generic [ref=e8]: "1"
+        - generic [ref=e9]: Overview
+      - link "Case Queue" [ref=e10] [cursor=pointer]:
+        - /url: ./table.html
+        - generic [ref=e11]: "2"
+        - generic [ref=e12]: Queue
+      - link "Case Investigation" [ref=e13] [cursor=pointer]:
+        - /url: ./charts.html
+        - generic [ref=e14]: "3"
+        - generic [ref=e15]: Investigation
+      - link "Domain Portfolio" [ref=e16] [cursor=pointer]:
+        - /url: ./heatmap.html
+        - generic [ref=e17]: "4"
+        - generic [ref=e18]: Domains
+      - link "Enforcement and Vendor Tracker" [ref=e19] [cursor=pointer]:
+        - /url: ./ui-elements.html
+        - generic [ref=e20]: "5"
+        - generic [ref=e21]: Enforcement
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - paragraph [ref=e26]: Page 5 / External Coordination
+          - heading "Enforcement & Vendor Tracker" [level=1] [ref=e27]
+        - link "Back to Investigation" [ref=e29] [cursor=pointer]:
+          - /url: ./charts.html
+      - navigation "Workflow Pages" [ref=e30]:
+        - link "1. Operations Overview" [ref=e31] [cursor=pointer]:
+          - /url: ./security-overview.html
+        - link "2. Case Queue" [ref=e32] [cursor=pointer]:
+          - /url: ./table.html
+        - link "3. Case Investigation" [ref=e33] [cursor=pointer]:
+          - /url: ./charts.html
+        - link "4. Domain Portfolio" [ref=e34] [cursor=pointer]:
+          - /url: ./heatmap.html
+        - link "5. Enforcement & Vendor Tracker" [ref=e35] [cursor=pointer]:
+          - /url: ./ui-elements.html
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - generic [ref=e38]: Vendor
+          - combobox "Vendor" [ref=e39]:
+            - option "All Vendors" [selected]
+            - option "DomainShield Global"
+            - option "ClearTrace Intelligence"
+            - option "MarketWatch Response"
+            - option "Search Integrity Partners"
+        - generic [ref=e40]:
+          - generic [ref=e41]: Status
+          - combobox "Status" [ref=e42]:
+            - option "All Statuses" [selected]
+            - option "Queued"
+            - option "Sent"
+            - option "In Progress"
+            - option "Resolved"
+            - option "Denied"
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - article [ref=e45]:
+          - paragraph [ref=e46]: Open Actions
+          - heading "4" [level=2] [ref=e47]
+        - article [ref=e48]:
+          - paragraph [ref=e49]: SLA Breaches
+          - heading "1" [level=2] [ref=e50]
+        - article [ref=e51]:
+          - paragraph [ref=e52]: Resolved Actions
+          - heading "2" [level=2] [ref=e53]
+      - generic [ref=e54]:
+        - article [ref=e55]:
+          - generic [ref=e56]:
+            - heading "Enforcement Pipeline" [level=2] [ref=e57]
+            - paragraph [ref=e58]: 6 enforcement action(s) in view
+          - table [ref=e60]:
+            - rowgroup [ref=e61]:
+              - row "Case ID Vendor Action Type SLA Timer Status Outcome Completion Date" [ref=e62]:
+                - columnheader "Case ID" [ref=e63]
+                - columnheader "Vendor" [ref=e64]
+                - columnheader "Action Type" [ref=e65]
+                - columnheader "SLA Timer" [ref=e66]
+                - columnheader "Status" [ref=e67]
+                - columnheader "Outcome" [ref=e68]
+                - columnheader "Completion Date" [ref=e69]
+            - rowgroup [ref=e70]:
+              - row "case-0006 DomainShield Global Legal Escalation Completed Resolved Escalated 26/02/2026" [ref=e71]:
+                - cell "case-0006" [ref=e72]
+                - cell "DomainShield Global" [ref=e73]
+                - cell "Legal Escalation" [ref=e74]
+                - cell "Completed" [ref=e75]:
+                  - generic [ref=e76]: Completed
+                - cell "Resolved" [ref=e77]:
+                  - generic [ref=e78]: Resolved
+                - cell "Escalated" [ref=e79]
+                - cell "26/02/2026" [ref=e80]
+              - row "case-0003 Search Integrity Partners Paid Search Complaint Completed Resolved Removed 04/03/2026" [ref=e81]:
+                - cell "case-0003" [ref=e82]
+                - cell "Search Integrity Partners" [ref=e83]
+                - cell "Paid Search Complaint" [ref=e84]
+                - cell "Completed" [ref=e85]:
+                  - generic [ref=e86]: Completed
+                - cell "Resolved" [ref=e87]:
+                  - generic [ref=e88]: Resolved
+                - cell "Removed" [ref=e89]
+                - cell "04/03/2026" [ref=e90]
+              - row "case-0001 DomainShield Global Registrar Report Overdue 2.1h In Progress Pending Open" [ref=e91]:
+                - cell "case-0001" [ref=e92]
+                - cell "DomainShield Global" [ref=e93]
+                - cell "Registrar Report" [ref=e94]
+                - cell "Overdue 2.1h" [ref=e95]:
+                  - generic [ref=e96]: Overdue 2.1h
+                - cell "In Progress" [ref=e97]:
+                  - generic [ref=e98]: In Progress
+                - cell "Pending" [ref=e99]
+                - cell "Open" [ref=e100]
+              - row "case-0002 MarketWatch Response Marketplace Report 27.9h left Sent Pending Open" [ref=e101]:
+                - cell "case-0002" [ref=e102]
+                - cell "MarketWatch Response" [ref=e103]
+                - cell "Marketplace Report" [ref=e104]
+                - cell "27.9h left" [ref=e105]:
+                  - generic [ref=e106]: 27.9h left
+                - cell "Sent" [ref=e107]:
+                  - generic [ref=e108]: Sent
+                - cell "Pending" [ref=e109]
+                - cell "Open" [ref=e110]
+              - row "case-0007 MarketWatch Response Marketplace Report 39.9h left Queued Pending Open" [ref=e111]:
+                - cell "case-0007" [ref=e112]
+                - cell "MarketWatch Response" [ref=e113]
+                - cell "Marketplace Report" [ref=e114]
+                - cell "39.9h left" [ref=e115]:
+                  - generic [ref=e116]: 39.9h left
+                - cell "Queued" [ref=e117]:
+                  - generic [ref=e118]: Queued
+                - cell "Pending" [ref=e119]
+                - cell "Open" [ref=e120]
+              - row "case-0002 MarketWatch Response Marketplace Report 48.0h left Queued Pending Open" [ref=e121]:
+                - cell "case-0002" [ref=e122]
+                - cell "MarketWatch Response" [ref=e123]
+                - cell "Marketplace Report" [ref=e124]
+                - cell "48.0h left" [ref=e125]:
+                  - generic [ref=e126]: 48.0h left
+                - cell "Queued" [ref=e127]:
+                  - generic [ref=e128]: Queued
+                - cell "Pending" [ref=e129]
+                - cell "Open" [ref=e130]
+        - article [ref=e131]:
+          - heading "Selected Enforcement Action" [level=2] [ref=e133]
+          - generic [ref=e134]:
+            - generic [ref=e135]:
+              - article [ref=e136]:
+                - paragraph [ref=e137]: Action ID
+                - strong [ref=e138]: act-0101
+              - article [ref=e139]:
+                - paragraph [ref=e140]: Case ID
+                - strong [ref=e141]: case-0002
+              - article [ref=e142]:
+                - paragraph [ref=e143]: Case Title
+                - strong [ref=e144]: Counterfeit listings using Meta branding assets
+              - article [ref=e145]:
+                - paragraph [ref=e146]: Vendor
+                - strong [ref=e147]: MarketWatch Response
+              - article [ref=e148]:
+                - paragraph [ref=e149]: Action Type
+                - strong [ref=e150]: Marketplace Report
+              - article [ref=e151]:
+                - paragraph [ref=e152]: Current Status
+                - strong [ref=e153]: Queued
+              - article [ref=e154]:
+                - paragraph [ref=e155]: SLA Timer
+                - strong [ref=e156]: 48.0h left
+              - article [ref=e157]:
+                - paragraph [ref=e158]: Outcome
+                - strong [ref=e159]: Pending
+              - article [ref=e160]:
+                - paragraph [ref=e161]: Requested
+                - strong [ref=e162]: 05/03/2026 11:16:41
+              - article [ref=e163]:
+                - paragraph [ref=e164]: Due
+                - strong [ref=e165]: 07/03/2026 11:16:41
+            - generic [ref=e166]:
+              - generic [ref=e167]:
+                - generic [ref=e168]: Update Status
+                - combobox "Update Status" [ref=e169]:
+                  - option "Queued" [selected]
+                  - option "Sent"
+                  - option "In Progress"
+                  - option "Resolved"
+                  - option "Denied"
+              - button "Apply Status" [ref=e170] [cursor=pointer]
+            - generic [ref=e171]:
+              - generic [ref=e172]: Add Coordination Note
+              - textbox "Add Coordination Note" [ref=e173]:
+                - /placeholder: vendor update or outcome note
+            - button "Add Note" [ref=e174] [cursor=pointer]
+            - heading "Action Notes" [level=3] [ref=e175]
+            - list [ref=e176]:
+              - listitem [ref=e177]:
+                - strong [ref=e178]: Analyst
+                - paragraph [ref=e179]: Action initiated from Case Investigation view.
+                - text: 05/03/2026 11:16:41
+      - article [ref=e180]:
+        - heading "Action Type Distribution" [level=2] [ref=e182]
+        - generic [ref=e183]:
+          - article [ref=e184]:
+            - generic [ref=e185]:
+              - generic [ref=e186]: Marketplace Report
+              - strong [ref=e187]: "3"
+          - article [ref=e190]:
+            - generic [ref=e191]:
+              - generic [ref=e192]: Registrar Report
+              - strong [ref=e193]: "1"
+          - article [ref=e196]:
+            - generic [ref=e197]:
+              - generic [ref=e198]: Paid Search Complaint
+              - strong [ref=e199]: "1"
+          - article [ref=e202]:
+            - generic [ref=e203]:
+              - generic [ref=e204]: Legal Escalation
+              - strong [ref=e205]: "1"

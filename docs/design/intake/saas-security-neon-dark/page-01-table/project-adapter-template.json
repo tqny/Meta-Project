@@ -1,0 +1,30 @@
+{
+  "style_id": "saas-security-neon-dark",
+  "page_id": "page-01-table",
+  "route": "",
+  "module_name": "",
+  "primary_goal": "",
+  "data_source": "",
+  "table_columns": [
+    "title",
+    "open_issues",
+    "type",
+    "replies"
+  ],
+  "interactions": {
+    "enable_sorting": true,
+    "enable_search": true,
+    "enable_pagination": true,
+    "row_action": "select"
+  },
+  "states_required": [
+    "loading",
+    "empty",
+    "error"
+  ],
+  "constraints": {
+    "mobile_first": true,
+    "a11y_level": "WCAG_AA",
+    "preserve_business_logic": true
+  }
+}

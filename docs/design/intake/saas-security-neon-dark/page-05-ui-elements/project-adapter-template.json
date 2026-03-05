@@ -1,0 +1,35 @@
+{
+  "style_id": "saas-security-neon-dark",
+  "page_id": "page-05-ui-elements",
+  "route": "",
+  "module_name": "",
+  "primary_goal": "",
+  "data_source": "",
+  "controls": {
+    "profile_selector": true,
+    "language_selector": true,
+    "icon_actions": [
+      "notifications",
+      "warnings",
+      "alerts"
+    ],
+    "range_slider": true
+  },
+  "widgets": [
+    "status_donut",
+    "deadline_card",
+    "trend_strip",
+    "expandable_incident_row"
+  ],
+  "states_required": [
+    "loading",
+    "empty",
+    "error",
+    "expanded"
+  ],
+  "constraints": {
+    "mobile_first": true,
+    "a11y_level": "WCAG_AA",
+    "preserve_business_logic": true
+  }
+}
