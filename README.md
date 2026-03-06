@@ -128,6 +128,18 @@ Run security suite structural smoke checks:
 node tests/security_suite_smoke.mjs
 ```
 
+Serve the `security-suite` dashboard with the correct shared asset paths:
+
+```bash
+./scripts/serve-security-suite.sh
+```
+
+This serves the repo root and points you at the `security-suite` app start page:
+
+```text
+http://127.0.0.1:4186/dashboard/security-suite/security-overview.html
+```
+
 ## Design Hub Workflow (Primary + Harvest)
 
 - Primary visual token authority: `design-system/firecrawl/tokens.css`

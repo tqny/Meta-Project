@@ -11,13 +11,13 @@
     <div class="ss-page">
       <div class="ss-shell">
         <aside class="ss-rail">
-          <div class="ss-logo" aria-hidden="true">BG</div>
+          <button class="ss-logo" type="button" data-brand-trigger aria-label="About Speculo">S</button>
           <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
             <a class="ss-icon-link" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
             <a class="ss-icon-link" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
-            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigate</span></a>
             <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
-            <a class="ss-icon-link is-active" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+            <a class="ss-icon-link is-active" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforce</span></a>
           </nav>
         </aside>
 
@@ -25,56 +25,64 @@
           <header class="ss-topbar">
             <div class="ss-topbar-row">
               <div>
-                <p class="ss-page-kicker">Page 5 / External Coordination</p>
                 <h1 class="ss-page-title">Enforcement &amp; Vendor Tracker</h1>
               </div>
-              <div class="ss-actions">
-                <a class="ss-link-btn ghost" href="./charts.html">Back to Investigation</a>
+              <div class="ss-actions ss-actions-note ss-actions-note-help">
+                <button id="enforcement-page-help" class="ss-icon-btn ss-help-btn" type="button" data-explainer-trigger="enforcement.page" aria-label="Explain Enforcement page">?</button>
               </div>
             </div>
-            <nav class="ss-page-tabs" aria-label="Workflow Pages">
-              <a class="ss-page-tab" href="./security-overview.html">1. Operations Overview</a>
-              <a class="ss-page-tab" href="./table.html">2. Case Queue</a>
-              <a class="ss-page-tab" href="./charts.html">3. Case Investigation</a>
-              <a class="ss-page-tab" href="./heatmap.html">4. Domain Portfolio</a>
-              <a class="ss-page-tab is-active" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
-            </nav>
             <div class="ss-topbar-row">
-              <label class="ss-field">
-                <span>Vendor</span>
-                <select id="enforcement-vendor-filter" class="ss-select"></select>
-              </label>
-              <label class="ss-field">
-                <span>Status</span>
-                <select id="enforcement-status-filter" class="ss-select"></select>
-              </label>
+              <div class="ss-controls ss-controls-enforcement">
+                <label class="ss-field">
+                  <span>Vendor</span>
+                  <select id="enforcement-vendor-filter" class="ss-select"></select>
+                </label>
+                <label class="ss-field">
+                  <span>Status</span>
+                  <select id="enforcement-status-filter" class="ss-select"></select>
+                </label>
+              </div>
             </div>
           </header>
 
           <section class="ss-content ss-grid">
-            <div class="ss-kpi-row ss-kpi-compact">
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Open Actions</p><h2 id="enforcement-kpi-open">0</h2></article>
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">SLA Breaches</p><h2 id="enforcement-kpi-breach">0</h2></article>
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Resolved Actions</p><h2 id="enforcement-kpi-resolved">0</h2></article>
-            </div>
-
-            <div class="ss-two-col ss-two-col-main">
-              <article class="ss-card">
-                <div class="ss-card-title-row">
-                  <h2 class="ss-card-title">Enforcement Pipeline</h2>
-                  <p id="enforcement-summary" class="ss-subtle"></p>
+            <div class="ss-two-col ss-two-col-main ss-enforcement-layout">
+              <article class="ss-card ss-table-card ss-table-card-enforcement">
+                <div class="ss-card-head">
+                  <div class="ss-card-head-main">
+                    <p class="ss-section-kicker">Vendor Coordination Surface</p>
+                    <div class="ss-card-title-row">
+                      <h2 class="ss-card-title">Enforcement Pipeline</h2>
+                      <p id="enforcement-summary" class="ss-subtle"></p>
+                    </div>
+                  </div>
+                  <div class="ss-card-head-actions ss-card-head-actions-enforcement">
+                    <div class="ss-inline-stats ss-inline-stats-enforcement" aria-label="Enforcement summary">
+                      <article class="ss-mini-stat">
+                        <span>Open Actions</span>
+                        <strong id="enforcement-kpi-open">0</strong>
+                      </article>
+                      <article class="ss-mini-stat">
+                        <span>SLA Breaches</span>
+                        <strong id="enforcement-kpi-breach">0</strong>
+                      </article>
+                      <article class="ss-mini-stat">
+                        <span>Resolved</span>
+                        <strong id="enforcement-kpi-resolved">0</strong>
+                      </article>
+                    </div>
+                    <button id="enforcement-surface-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="enforcement.pipeline" aria-label="Explain Enforcement Pipeline">?</button>
+                  </div>
                 </div>
-                <div class="ss-table-wrap">
-                  <table class="ss-table ss-table-wide">
+                <div class="ss-table-wrap ss-table-wrap-enforcement">
+                  <table class="ss-table ss-table-enforcement">
                     <thead>
                       <tr>
-                        <th>Case ID</th>
-                        <th>Vendor</th>
-                        <th>Action Type</th>
-                        <th>SLA Timer</th>
-                        <th>Status</th>
-                        <th>Outcome</th>
-                        <th>Completion Date</th>
+                        <th>Enforcement Item</th>
+                        <th>Vendor Route</th>
+                        <th>SLA Window</th>
+                        <th>Status &amp; Outcome</th>
+                        <th>Latest Coordination</th>
                       </tr>
                     </thead>
                     <tbody id="enforcement-rows"></tbody>
@@ -82,23 +90,38 @@
                 </div>
               </article>
 
-              <article class="ss-card">
-                <div class="ss-card-title-row"><h2 class="ss-card-title">Selected Enforcement Action</h2></div>
+              <article class="ss-card ss-enforcement-detail-card">
+                <div class="ss-card-title-row ss-card-title-row-help">
+                  <h2 class="ss-card-title">Action Coordination Panel</h2>
+                  <div class="ss-card-title-actions">
+                    <button id="enforcement-detail-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="enforcement.action_coordination_panel" aria-label="Explain Action Coordination Panel">?</button>
+                  </div>
+                </div>
                 <div id="enforcement-empty" class="ss-empty">Select an action to update status or add notes.</div>
                 <div id="enforcement-panel" class="ss-hidden">
-                  <div id="enforcement-detail-grid" class="ss-kv-grid"></div>
+                  <div class="ss-enforcement-spotlight">
+                    <p id="enforcement-detail-kicker" class="ss-page-kicker"></p>
+                    <h3 id="enforcement-detail-title" class="ss-queue-detail-title"></h3>
+                    <p id="enforcement-detail-copy" class="ss-subtle ss-queue-detail-copy"></p>
+                    <div id="enforcement-detail-status" class="ss-chip-row"></div>
+                  </div>
 
-                  <div class="ss-controls">
-                    <label class="ss-field">
-                      <span>Update Status</span>
-                      <select id="enforcement-next-status" class="ss-select"></select>
-                    </label>
-                    <button id="enforcement-update-status" class="ss-btn" type="button">Apply Status</button>
+                  <div id="enforcement-detail-grid" class="ss-kv-grid ss-kv-grid-compact"></div>
+
+                  <div class="ss-enforcement-controls-card">
+                    <p class="ss-field-label">Action Controls</p>
+                    <div class="ss-controls ss-controls-stack">
+                      <label class="ss-field">
+                        <span>Update Status</span>
+                        <select id="enforcement-next-status" class="ss-select"></select>
+                      </label>
+                      <button id="enforcement-update-status" class="ss-btn" type="button">Apply Status</button>
+                    </div>
                   </div>
 
                   <label class="ss-field">
                     <span>Add Coordination Note</span>
-                    <textarea id="enforcement-note-input" class="ss-textarea" rows="3" placeholder="vendor update or outcome note"></textarea>
+                    <textarea id="enforcement-note-input" class="ss-textarea" rows="3" placeholder="vendor update, escalation note, or outcome detail"></textarea>
                   </label>
                   <button id="enforcement-add-note" class="ss-btn" type="button">Add Note</button>
 
@@ -108,10 +131,26 @@
               </article>
             </div>
 
-            <article class="ss-card">
-              <div class="ss-card-title-row"><h2 class="ss-card-title">Action Type Distribution</h2></div>
-              <div id="enforcement-type-bars" class="ss-bar-list"></div>
-            </article>
+            <div class="ss-support-grid ss-support-grid-enforcement">
+              <article class="ss-card">
+                <div class="ss-card-title-row">
+                  <h2 class="ss-card-title">Vendor Workload</h2>
+                  <p class="ss-subtle">Visible action volume by partner</p>
+                </div>
+                <div id="enforcement-type-bars" class="ss-bar-list"></div>
+                <div class="ss-card-quiet-help">
+                  <button id="enforcement-meta-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="workflow.meta" aria-label="Explain the full workflow and program manager role">?</button>
+                </div>
+              </article>
+
+              <article class="ss-card">
+                <div class="ss-card-title-row">
+                  <h2 class="ss-card-title">Deadline Watch</h2>
+                  <p id="enforcement-deadline-summary" class="ss-subtle"></p>
+                </div>
+                <ul id="enforcement-deadline-list" class="ss-list"></ul>
+              </article>
+            </div>
           </section>
         </main>
       </div>

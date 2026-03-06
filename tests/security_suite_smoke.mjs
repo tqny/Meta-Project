@@ -19,21 +19,21 @@ function assertRegex(content, regex, context) {
   }
 }
 
+function assertNotRegex(content, regex, context) {
+  if (regex.test(content)) {
+    throw new Error(`Unexpected regex in ${context}: ${regex}`);
+  }
+}
+
 const pages = [
   {
     file: 'dashboard/security-suite/security-overview.html',
     mustContain: [
       'data-page="overview"',
-      'id="overview-kpi-open"',
-      'id="overview-kpi-high"',
-      'id="overview-kpi-domains"',
-      'id="overview-kpi-breaches"',
-      'id="overview-kpi-triage"',
-      'id="overview-kpi-close"',
       'id="overview-volume-line"',
       'id="overview-channel-bars"',
       'id="overview-type-bars"',
-      'id="overview-summary"',
+      'id="overview-summary-trigger"',
       'id="overview-watchlist"',
     ],
   },
@@ -123,12 +123,13 @@ for (const page of pages) {
   for (const token of page.mustContain) {
     assertIncludes(content, token, page.file);
   }
-  assertRegex(content, /class="ss-page-tabs"/, page.file);
+  assertRegex(content, /class="ss-rail-nav"/, page.file);
+  assertNotRegex(content, /class="ss-page-tabs"/, page.file);
 }
 
 const js = read('dashboard/security-suite/assets/security-suite.js');
 [
-  'const STORAGE_KEY = \'brandguard-suite-state-v4\';',
+  'const STORAGE_KEY = \'brandguard-suite-state-v5\';',
   'const CASE_STATUSES = [\'New\', \'Triaged\', \'Investigating\', \'Enforcement\', \'Closed\'];',
   'function createInitialState()',
   'function migrateFromLegacy(existing)',

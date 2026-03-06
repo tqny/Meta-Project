@@ -11,13 +11,13 @@
     <div class="ss-page">
       <div class="ss-shell">
         <aside class="ss-rail">
-          <div class="ss-logo" aria-hidden="true">BG</div>
+          <button class="ss-logo" type="button" data-brand-trigger aria-label="About Speculo">S</button>
           <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
             <a class="ss-icon-link" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
             <a class="ss-icon-link" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
-            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigate</span></a>
             <a class="ss-icon-link is-active" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
-            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforce</span></a>
           </nav>
         </aside>
 
@@ -25,55 +25,64 @@
           <header class="ss-topbar">
             <div class="ss-topbar-row">
               <div>
-                <p class="ss-page-kicker">Page 4 / Domain Operations</p>
                 <h1 class="ss-page-title">Domain Portfolio Dashboard</h1>
               </div>
-              <div class="ss-actions">
-                <a class="ss-link-btn ghost" href="./table.html">Back to Queue</a>
+              <div class="ss-actions ss-actions-note ss-actions-note-help">
+                <button id="domains-page-help" class="ss-icon-btn ss-help-btn" type="button" data-explainer-trigger="domains.page" aria-label="Explain Domain Portfolio page">?</button>
               </div>
             </div>
-            <nav class="ss-page-tabs" aria-label="Workflow Pages">
-              <a class="ss-page-tab" href="./security-overview.html">1. Operations Overview</a>
-              <a class="ss-page-tab" href="./table.html">2. Case Queue</a>
-              <a class="ss-page-tab" href="./charts.html">3. Case Investigation</a>
-              <a class="ss-page-tab is-active" href="./heatmap.html">4. Domain Portfolio</a>
-              <a class="ss-page-tab" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
-            </nav>
             <div class="ss-topbar-row">
-              <label class="ss-field">
-                <span>Search Domains</span>
-                <input id="domains-search" class="ss-input" type="search" placeholder="domain, registrar, flag" />
-              </label>
-              <label class="ss-field">
-                <span>Status Filter</span>
-                <select id="domains-status-filter" class="ss-select"></select>
-              </label>
+              <div class="ss-controls ss-controls-domains">
+                <label class="ss-field">
+                  <span>Search Domains</span>
+                  <input id="domains-search" class="ss-input" type="search" placeholder="domain, registrar, flag" />
+                </label>
+                <label class="ss-field">
+                  <span>Status Filter</span>
+                  <select id="domains-status-filter" class="ss-select"></select>
+                </label>
+              </div>
             </div>
           </header>
 
           <section class="ss-content ss-grid">
-            <div class="ss-kpi-row ss-kpi-compact">
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Total Domains</p><h2 id="domains-kpi-total">0</h2></article>
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Monitoring</p><h2 id="domains-kpi-monitoring">0</h2></article>
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Incident Domains</p><h2 id="domains-kpi-incident">0</h2></article>
-            </div>
-
-            <div class="ss-two-col ss-two-col-main">
-              <article class="ss-card">
-                <div class="ss-card-title-row">
-                  <h2 class="ss-card-title">Domain Portfolio</h2>
-                  <p id="domains-summary" class="ss-subtle"></p>
+            <div class="ss-two-col ss-two-col-main ss-domains-layout">
+              <article class="ss-card ss-table-card ss-table-card-domains">
+                <div class="ss-card-head">
+                  <div class="ss-card-head-main">
+                    <p class="ss-section-kicker">Portfolio Review Surface</p>
+                    <div class="ss-card-title-row">
+                      <h2 class="ss-card-title">Domain Portfolio</h2>
+                      <p id="domains-summary" class="ss-subtle"></p>
+                    </div>
+                  </div>
+                  <div class="ss-card-head-actions ss-card-head-actions-domains">
+                    <div class="ss-inline-stats ss-inline-stats-domains" aria-label="Domain summary">
+                      <article class="ss-mini-stat">
+                        <span>Total Domains</span>
+                        <strong id="domains-kpi-total">0</strong>
+                      </article>
+                      <article class="ss-mini-stat">
+                        <span>Monitoring</span>
+                        <strong id="domains-kpi-monitoring">0</strong>
+                      </article>
+                      <article class="ss-mini-stat">
+                        <span>Incident</span>
+                        <strong id="domains-kpi-incident">0</strong>
+                      </article>
+                    </div>
+                    <button id="domains-surface-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="domains.portfolio" aria-label="Explain Domain Portfolio">?</button>
+                  </div>
                 </div>
-                <div class="ss-table-wrap">
-                  <table class="ss-table ss-table-wide">
+                <div class="ss-table-wrap ss-table-wrap-domains">
+                  <table class="ss-table ss-table-domains">
                     <thead>
                       <tr>
-                        <th>Domain</th>
-                        <th>Registrar</th>
-                        <th>Expiration</th>
-                        <th>Security Status</th>
-                        <th>Status</th>
-                        <th>Risk Alerts</th>
+                        <th>Domain Asset</th>
+                        <th>Security Controls</th>
+                        <th>Risk Posture</th>
+                        <th>Portfolio Status</th>
+                        <th>Activity</th>
                       </tr>
                     </thead>
                     <tbody id="domains-rows"></tbody>
@@ -81,13 +90,29 @@
                 </div>
               </article>
 
-              <article class="ss-card">
-                <div class="ss-card-title-row"><h2 class="ss-card-title">Domain Detail</h2></div>
+              <article class="ss-card ss-domains-detail-card">
+                <div class="ss-card-title-row ss-card-title-row-help">
+                  <h2 class="ss-card-title">Domain Operations Panel</h2>
+                  <div class="ss-card-title-actions">
+                    <button id="domains-detail-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="domains.domain_operations_panel" aria-label="Explain Domain Operations Panel">?</button>
+                  </div>
+                </div>
                 <div id="domains-empty" class="ss-empty">Select a domain to inspect risk flags and registrar history.</div>
                 <div id="domains-panel" class="ss-hidden">
-                  <div id="domains-detail-grid" class="ss-kv-grid"></div>
-                  <h3 class="ss-subtitle">Risk Flags</h3>
-                  <div id="domains-risk-flags" class="ss-chip-row"></div>
+                  <div class="ss-domains-spotlight">
+                    <p id="domains-detail-kicker" class="ss-page-kicker"></p>
+                    <h3 id="domains-detail-title" class="ss-queue-detail-title"></h3>
+                    <p id="domains-detail-copy" class="ss-subtle ss-queue-detail-copy"></p>
+                    <div id="domains-detail-status" class="ss-chip-row"></div>
+                  </div>
+
+                  <div id="domains-detail-grid" class="ss-kv-grid ss-kv-grid-compact"></div>
+
+                  <div class="ss-domains-risk-card">
+                    <p class="ss-field-label">Risk Posture</p>
+                    <div id="domains-risk-scale" class="ss-risk-scale" aria-label="Risk posture scale"></div>
+                    <div id="domains-risk-flags" class="ss-chip-row"></div>
+                  </div>
 
                   <h3 class="ss-subtitle">Linked Cases</h3>
                   <ul id="domains-linked-cases" class="ss-list"></ul>
