@@ -3,8 +3,10 @@
 Date: 2026-03-06
 
 Update:
-- Legacy frontend separation is now complete: the older Firecrawl dashboard lives under `dashboard/legacy-firecrawl/`.
-- The sections below preserve the original diagnosis that led to that move.
+- Legacy Firecrawl frontend was archived on branch `codex/archive-firecrawl-final` at commit `d33cb7a`.
+- The Firecrawl working-tree files were then removed so `dashboard/security-suite/` is the only current frontend surface.
+- `.playwright-cli` artifacts were untracked and ignored.
+- The sections below preserve the original diagnosis that led to that cleanup.
 
 ## Purpose
 
@@ -15,16 +17,14 @@ Document where the workspace is genuinely mingled, what is merely shared infrast
 - `dashboard/security-suite/`
   - Active Speculo UI build
   - Current 5-page workflow plus 2 rollback pages
-- `dashboard/legacy-firecrawl/`
-  - Older dashboard surfaces, local token mirror, theme output, and legacy payload
 - `design-system/`
-  - Root-level design buckets, compositions, and token sources
+  - Active token source for `security-suite`
 - `src/brandguard/`, `scripts/`, `tests/`
   - Backend simulation, artifact generation, utilities, and tests
 - `docs/`
   - Mixed project docs, ADRs, metrics artifacts, design intake, worklog
 - `.playwright-cli/`
-  - Generated local browser artifacts currently tracked by git
+  - Generated local browser artifacts now ignored
 
 ## Actual Mingling Problems
 

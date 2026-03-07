@@ -12,11 +12,11 @@ Speculo is a portfolio prototype simulating how a large technology company detec
 
 ## Project Status
 
-Contract-first architecture, artifact/index/report tooling, and multiple frontend surfaces are in place.
+Contract-first architecture, artifact/index/report tooling, and the active Security Suite frontend are in place.
 
 Current frontend status:
 - Active frontend: `dashboard/security-suite/`
-- Legacy frontend surfaces kept for reference: `dashboard/legacy-firecrawl/index.html`, `dashboard/legacy-firecrawl/campaigns.html`
+- Older Firecrawl prototype: archived in git history and removed from the active working tree
 
 ## Repository Layout
 
@@ -100,14 +100,6 @@ python3 scripts/tune-thresholds.py --dry-run
 
 ## Product Surfaces
 
-Build dashboard payload from latest indexed run:
-
-```bash
-python3 scripts/build-product-v1.py
-```
-
-The dashboard includes a Threshold Tuning panel when `docs/metrics/threshold_tuning/latest.json` exists.
-
 Serve locally:
 
 ```bash
@@ -119,8 +111,12 @@ Open:
 - Landing: `http://127.0.0.1:8080/`
 - Active security suite overview: `http://127.0.0.1:8080/dashboard/security-suite/security-overview.html`
 - Active security suite map: `http://127.0.0.1:8080/dashboard/security-suite/index.html`
-- Legacy operations dashboard: `http://127.0.0.1:8080/dashboard/legacy-firecrawl/index.html`
-- Legacy campaign lab: `http://127.0.0.1:8080/dashboard/legacy-firecrawl/campaigns.html`
+
+Build product payload from latest indexed run:
+
+```bash
+python3 scripts/build-product-v1.py
+```
 
 Install reusable design bucket into another project:
 
@@ -146,24 +142,13 @@ This serves the repo root and points you at the `security-suite` app start page:
 http://127.0.0.1:4186/dashboard/security-suite/security-overview.html
 ```
 
-## Design Hub Workflow (Primary + Harvest)
+## Security Suite Design Sources
 
 - Active `security-suite` token authority: `design-system/saas-security-neon/tokens.css`
-- Legacy dashboard token authority: `design-system/firecrawl/tokens.css`
-- Legacy dashboard root class: `.theme-firecrawl`
-- Composition package:
-  - `design-system/compositions/firecrawl-speculo-brandguard-operations-console-for-predictive-domain-abuse-enforcement-case-q-202603041455/`
-- Traceability:
-  - `docs/design/primary-harvest-traceability.md`
-
-Run outfit commands (required command phrases):
-
-```bash
-python3 scripts/theme-outfit.py list outfits
-python3 scripts/theme-outfit.py switch to next one
-python3 scripts/theme-outfit.py switch to previous one
-python3 scripts/theme-outfit.py switch to idea-02
-```
+- Active app design docs:
+  - `dashboard/security-suite/docs/spec.md`
+  - `dashboard/security-suite/docs/design.md`
+  - `dashboard/security-suite/docs/architecture.md`
 
 ## Evidence-First Workflow
 
