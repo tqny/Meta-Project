@@ -44,7 +44,7 @@ async function loadPayload() {
 async function loadThresholdArtifact(payload) {
   const path = payload?.threshold_tuning?.artifact_path;
   if (!path || typeof path !== 'string') return null;
-  const relative = path.startsWith('http') ? path : `../${path}`;
+  const relative = path.startsWith('http') ? path : `../../${path}`;
   try {
     const response = await fetch(relative, { cache: 'no-store' });
     if (!response.ok) return null;

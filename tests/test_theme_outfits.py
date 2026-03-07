@@ -55,7 +55,7 @@ class ThemeOutfitTest(unittest.TestCase):
             json.dumps({"activeBucketId": "idea-01", "updatedAt": "2026-03-04T00:00:00+00:00"}) + "\n",
             encoding="utf-8",
         )
-        css_path = root / "dashboard" / "theme.css"
+        css_path = root / "dashboard" / "legacy-firecrawl" / "theme.css"
         return buckets_dir, active_bucket, css_path
 
     def test_list_and_cycle(self) -> None:

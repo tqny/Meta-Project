@@ -15,10 +15,10 @@ The project must remain demo-stable without external API dependencies for domain
 Build a local-first V1 dashboard:
 
 - Data adapter in `src/brandguard/product_v1.py` to transform indexed run artifacts into a dashboard payload.
-- Payload builder CLI `scripts/build-product-v1.py` to create `dashboard/data/product-v1.json`.
-- Frontend console at `dashboard/index.html` with queue, detail, lifecycle actions, vendor capacity, and campaign board.
+- Payload builder CLI `scripts/build-product-v1.py` to create `dashboard/legacy-firecrawl/data/product-v1.json`.
+- Frontend console at `dashboard/legacy-firecrawl/index.html` with queue, detail, lifecycle actions, vendor capacity, and campaign board.
 - Design-token outfit system using `design-system/buckets/idea-0X.json` and `scripts/theme-outfit.py` with required command phrases.
-- Theme CSS generated to `dashboard/theme.css` from active bucket, so style decisions remain centralized.
+- Theme CSS generated to `dashboard/legacy-firecrawl/theme.css` from active bucket, so style decisions remain centralized.
 
 ## Consequences
 
@@ -44,4 +44,3 @@ Build a local-first V1 dashboard:
 - Persist UI lifecycle changes to dedicated case event artifacts.
 - Add multi-run selector inside dashboard.
 - Add role-based workflow views (triage, escalation, vendor management).
-

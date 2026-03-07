@@ -22,7 +22,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "dashboard" / "theme.css",
+        default=ROOT / "dashboard" / "legacy-firecrawl" / "theme.css",
         help="Output path for generated theme CSS",
     )
     parser.add_argument(

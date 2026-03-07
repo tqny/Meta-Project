@@ -3,20 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Speculo Operations Dashboard</title>
+    <title>Speculo Operations Dashboard (Legacy)</title>
     <link rel="stylesheet" href="./design-system/firecrawl/tokens.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="theme-firecrawl spec-page">
     <header class="spec-nav">
       <div class="spec-nav-inner">
-        <a class="spec-brand" href="../index.html">speculo</a>
+        <a class="spec-brand" href="../../index.html">speculo</a>
         <nav class="spec-links" aria-label="Primary">
-          <a class="spec-link is-active" href="./index.html">Operations</a>
-          <a class="spec-link" href="./campaigns.html">Campaign Lab</a>
-          <a class="spec-link" href="../docs/metrics/WEEKLY_RUN_REPORT_2026-03-04.md" target="_blank" rel="noreferrer">Reporting</a>
+          <a class="spec-link" href="../security-suite/security-overview.html">Security Suite</a>
+          <a class="spec-link is-active" href="./index.html">Legacy Operations</a>
+          <a class="spec-link" href="./campaigns.html">Legacy Campaign Lab</a>
+          <a class="spec-link" href="../../docs/metrics/WEEKLY_RUN_REPORT_2026-03-04.md" target="_blank" rel="noreferrer">Reporting</a>
         </nav>
         <div class="spec-nav-actions">
+          <a class="spec-secondary-btn" href="../security-suite/security-overview.html">Open Active Suite</a>
           <button id="run-autopilot" class="spec-secondary-btn" type="button">Run Autopilot</button>
           <button id="reset-state" class="spec-primary-btn" type="button">Reset Session</button>
         </div>
@@ -26,16 +28,17 @@
     <main class="spec-main">
       <section class="spec-hero">
         <div class="spec-hero-left">
-          <p class="spec-kicker">Domain abuse enforcement operations</p>
-          <h1>Run the response loop from detection to mitigation.</h1>
+          <p class="spec-kicker">Legacy Firecrawl operations prototype</p>
+          <h1>Reference the older response loop without confusing it for the active app.</h1>
           <p class="spec-subcopy">
-            Speculo surfaces high-risk impersonation infrastructure, prioritizes actionability, and drives operator decisions with explainable evidence.
+            This older dashboard remains available for historical reference and rollback context. The current active frontend is the Security Suite under `dashboard/security-suite`.
           </p>
           <div class="spec-hero-actions">
-            <a class="spec-primary-btn" href="./campaigns.html">Open Campaign Lab</a>
-            <a class="spec-secondary-btn" href="../docs/design/primary-harvest-traceability.md" target="_blank" rel="noreferrer">Design Traceability</a>
+            <a class="spec-primary-btn" href="../security-suite/security-overview.html">Open Active Security Suite</a>
+            <a class="spec-secondary-btn" href="./campaigns.html">Open Legacy Campaign Lab</a>
+            <a class="spec-secondary-btn" href="../../docs/design/primary-harvest-traceability.md" target="_blank" rel="noreferrer">Design Traceability</a>
           </div>
-          <p id="run-meta" class="spec-status">Loading run context...</p>
+          <p id="run-meta" class="spec-status">Legacy surface. Use for comparison only; active work starts in the Security Suite.</p>
         </div>
 
         <article class="spec-code-panel">

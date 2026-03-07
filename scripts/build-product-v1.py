@@ -53,7 +53,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "dashboard" / "data" / "product-v1.json",
+        default=ROOT / "dashboard" / "legacy-firecrawl" / "data" / "product-v1.json",
         help="Dashboard payload output path",
     )
     parser.add_argument(

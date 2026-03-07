@@ -1,11 +1,13 @@
 # Primary + Harvest Traceability
 
+This document describes the older Firecrawl-based landing/dashboard/campaign surfaces, now stored under `dashboard/legacy-firecrawl/`. It is not the source-of-truth doc for the active `dashboard/security-suite` build.
+
 - Date: 2026-03-04
 - Project name: Speculo (BrandGuard prototype)
 - Route/surface updated:
   - `/index.html` (landing page)
-  - `/dashboard/index.html` (operations dashboard)
-  - `/dashboard/campaigns.html` (campaign lab)
+  - `/dashboard/legacy-firecrawl/index.html` (legacy operations dashboard)
+  - `/dashboard/legacy-firecrawl/campaigns.html` (legacy campaign lab)
 - Primary bucket: `firecrawl` (`design-system/firecrawl`)
 - Composition source: `design-system/compositions/firecrawl-speculo-brandguard-operations-console-for-predictive-domain-abuse-enforcement-case-q-202603041455`
 
@@ -40,7 +42,7 @@
 
 ## Business Logic / Data Integrity
 
-- API/data contracts: input payload contract unchanged (`dashboard/data/product-v1.json`).
+- API/data contracts: input payload contract unchanged (`dashboard/legacy-firecrawl/data/product-v1.json`).
 - Business behavior: intentionally reimagined for product goals:
   - New operator workflow stage model (`Detect`, `Validate`, `Enforce`, `Monitor`, `Closed`).
   - New autopilot policy behavior for stage movement based on risk posture.

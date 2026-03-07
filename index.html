@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Speculo</title>
+    <title>Speculo Project Surfaces</title>
     <link rel="stylesheet" href="./design-system/firecrawl/tokens.css" />
-    <link rel="stylesheet" href="./dashboard/styles.css" />
+    <link rel="stylesheet" href="./dashboard/legacy-firecrawl/styles.css" />
   </head>
   <body class="theme-firecrawl spec-page">
     <header class="spec-nav">
@@ -13,11 +13,11 @@
         <a class="spec-brand" href="./index.html">speculo</a>
         <nav class="spec-links" aria-label="Primary">
           <a class="spec-link is-active" href="./index.html">Home</a>
-          <a class="spec-link" href="./dashboard/index.html">Operations</a>
-          <a class="spec-link" href="./dashboard/campaigns.html">Campaign Lab</a>
+          <a class="spec-link" href="./dashboard/security-suite/security-overview.html">Security Suite</a>
+          <a class="spec-link" href="./dashboard/legacy-firecrawl/index.html">Legacy Ops</a>
         </nav>
         <div class="spec-nav-actions">
-          <a class="spec-primary-btn" href="./dashboard/index.html">Open Dashboard</a>
+          <a class="spec-primary-btn" href="./dashboard/security-suite/security-overview.html">Open Active Suite</a>
         </div>
       </div>
     </header>
@@ -25,16 +25,16 @@
     <main class="spec-main">
       <section class="spec-hero landing-hero">
         <div class="spec-hero-left">
-          <p class="spec-kicker">Off-platform enforcement simulation</p>
-          <h1>Protect brand trust by orchestrating faster domain abuse response.</h1>
+          <p class="spec-kicker">Active build + legacy prototype surfaces</p>
+          <h1>Protect brand trust with the active Security Suite workflow.</h1>
           <p class="spec-subcopy">
-            Speculo is a portfolio-grade prototype that models detection, prioritization, campaign intelligence, and enforcement operations for domain impersonation threats.
+            The current active frontend lives in `dashboard/security-suite`. Older Firecrawl-based dashboard surfaces remain available under `dashboard/legacy-firecrawl` for reference, comparison, and rollback planning.
           </p>
           <div class="spec-hero-actions">
-            <a class="spec-primary-btn" href="./dashboard/index.html">Go to Operations Dashboard</a>
-            <a class="spec-secondary-btn" href="./dashboard/campaigns.html">Open Campaign Lab</a>
+            <a class="spec-primary-btn" href="./dashboard/security-suite/security-overview.html">Open Active Security Suite</a>
+            <a class="spec-secondary-btn" href="./dashboard/legacy-firecrawl/index.html">Open Legacy Operations Dashboard</a>
           </div>
-          <p class="spec-status">Start in Operations for day-to-day execution. Use Campaign Lab for strategic analysis and threshold policy tuning.</p>
+          <p class="spec-status">Start in the Security Suite Overview for current work. Use the legacy dashboard only when you need historical reference surfaces.</p>
         </div>
 
         <article class="spec-code-panel">
@@ -54,10 +54,10 @@
             <h2>What You Can Do</h2>
           </header>
           <div class="landing-list">
-            <p><strong>Operate the queue:</strong> prioritize cases, transition workflow stages, and attach analyst evidence.</p>
-            <p><strong>Track risk posture:</strong> inspect distribution, stage load, and vendor pressure in one view.</p>
-            <p><strong>Analyze campaigns:</strong> rank clusters by pressure, inspect linked cases, and dispatch escalation.</p>
-            <p><strong>Tune policy:</strong> compare threshold tradeoffs with precision/recall and overflow constraints.</p>
+            <p><strong>Run the active workflow:</strong> move through overview, queue, investigation, domain, and enforcement surfaces in the Security Suite.</p>
+            <p><strong>Inspect legacy references:</strong> compare earlier Operations and Campaign Lab surfaces without treating them as the current app.</p>
+            <p><strong>Trace evidence and design inputs:</strong> follow docs, metrics artifacts, and design-system sources across the repo.</p>
+            <p><strong>Plan separation work safely:</strong> use the active-vs-legacy distinction before moving or deleting old frontend paths.</p>
           </div>
         </article>
 
@@ -66,9 +66,9 @@
             <h2>Page Logic</h2>
           </header>
           <div class="landing-list">
-            <p><strong>Operations Dashboard:</strong> primary work surface with charts, bars, filters, queue, and case console.</p>
-            <p><strong>Campaign Lab:</strong> cluster intelligence, threshold terminal, and strategy memo generation.</p>
-            <p><strong>Documentation Surfaces:</strong> problem framing, workflow explanation, and evidence traceability.</p>
+            <p><strong>Security Suite:</strong> active 5-page Speculo workflow under `dashboard/security-suite/`.</p>
+            <p><strong>Legacy Operations + Campaign Lab:</strong> older Firecrawl surfaces under `dashboard/legacy-firecrawl/` kept for reference.</p>
+            <p><strong>Documentation Surfaces:</strong> repo-level evidence and design history plus active app docs under `dashboard/security-suite/docs/`.</p>
           </div>
         </article>
       </section>
