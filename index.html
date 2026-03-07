@@ -3,109 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Speculo</title>
-    <link rel="stylesheet" href="./design-system/firecrawl/tokens.css" />
-    <link rel="stylesheet" href="./dashboard/styles.css" />
+    <title>Speculo Security Suite</title>
+    <link rel="stylesheet" href="./design-system/saas-security-neon/tokens.css" />
+    <link rel="stylesheet" href="./dashboard/security-suite/assets/security-suite.css" />
   </head>
-  <body class="theme-firecrawl spec-page">
-    <header class="spec-nav">
-      <div class="spec-nav-inner">
-        <a class="spec-brand" href="./index.html">speculo</a>
-        <nav class="spec-links" aria-label="Primary">
-          <a class="spec-link is-active" href="./index.html">Home</a>
-          <a class="spec-link" href="./dashboard/index.html">Operations</a>
-          <a class="spec-link" href="./dashboard/campaigns.html">Campaign Lab</a>
-        </nav>
-        <div class="spec-nav-actions">
-          <a class="spec-primary-btn" href="./dashboard/index.html">Open Dashboard</a>
-        </div>
+  <body class="theme-saas-security-neon">
+    <div class="ss-page">
+      <div class="ss-shell">
+        <aside class="ss-rail">
+          <a class="ss-logo" href="./index.html" aria-label="Speculo Home">S</a>
+          <nav class="ss-rail-nav" aria-label="Security Suite pages">
+            <a class="ss-icon-link" href="./dashboard/security-suite/security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
+            <a class="ss-icon-link" href="./dashboard/security-suite/table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
+            <a class="ss-icon-link" href="./dashboard/security-suite/charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigate</span></a>
+            <a class="ss-icon-link" href="./dashboard/security-suite/heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
+            <a class="ss-icon-link" href="./dashboard/security-suite/ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforce</span></a>
+          </nav>
+        </aside>
+
+        <main class="ss-main">
+          <header class="ss-topbar">
+            <div class="ss-topbar-row">
+              <div>
+                <p class="ss-overview-title-prefix">Speculo</p>
+                <h1 class="ss-page-title">Security Suite Home</h1>
+              </div>
+            </div>
+          </header>
+
+          <section class="ss-content ss-grid">
+            <article class="ss-card">
+              <div class="ss-card-title-row">
+                <h2 class="ss-card-title">Active App</h2>
+                <p class="ss-subtle">Security Suite is the only current frontend in this repo.</p>
+              </div>
+              <p class="ss-subtle">
+                Start at Operations Overview for the live walkthrough, or use the workflow map if you want the page-by-page route map first.
+              </p>
+              <div class="ss-kpi-row">
+                <a class="ss-link-btn primary" href="./dashboard/security-suite/security-overview.html">Open Operations Overview</a>
+                <a class="ss-link-btn" href="./dashboard/security-suite/index.html">Open Workflow Map</a>
+              </div>
+            </article>
+
+            <article class="ss-card">
+              <div class="ss-card-title-row">
+                <h2 class="ss-card-title">Working Docs</h2>
+                <p class="ss-subtle">Use the app-scoped docs, not old prototype history, when continuing implementation.</p>
+              </div>
+              <div class="ss-kpi-row">
+                <a class="ss-link-btn primary" href="./dashboard/security-suite/docs/spec.md">Spec</a>
+                <a class="ss-link-btn" href="./dashboard/security-suite/docs/design.md">Design</a>
+                <a class="ss-link-btn" href="./dashboard/security-suite/docs/architecture.md">Architecture</a>
+              </div>
+            </article>
+
+            <article class="ss-card">
+              <div class="ss-card-title-row">
+                <h2 class="ss-card-title">Archive Note</h2>
+                <p class="ss-subtle">The older Firecrawl prototype was archived in git history and removed from the active working tree.</p>
+              </div>
+              <p class="ss-subtle">
+                If you ever need it again, recover it from the archive branch or prior commit history rather than rebuilding around it here.
+              </p>
+            </article>
+          </section>
+        </main>
       </div>
-    </header>
-
-    <main class="spec-main">
-      <section class="spec-hero landing-hero">
-        <div class="spec-hero-left">
-          <p class="spec-kicker">Off-platform enforcement simulation</p>
-          <h1>Protect brand trust by orchestrating faster domain abuse response.</h1>
-          <p class="spec-subcopy">
-            Speculo is a portfolio-grade prototype that models detection, prioritization, campaign intelligence, and enforcement operations for domain impersonation threats.
-          </p>
-          <div class="spec-hero-actions">
-            <a class="spec-primary-btn" href="./dashboard/index.html">Go to Operations Dashboard</a>
-            <a class="spec-secondary-btn" href="./dashboard/campaigns.html">Open Campaign Lab</a>
-          </div>
-          <p class="spec-status">Start in Operations for day-to-day execution. Use Campaign Lab for strategic analysis and threshold policy tuning.</p>
-        </div>
-
-        <article class="spec-code-panel">
-          <div class="spec-tab-row" role="tablist" aria-label="Speculo flow tabs">
-            <button class="spec-tab is-active" type="button" role="tab" data-land-tab="flow" aria-selected="true">Pipeline</button>
-            <button class="spec-tab" type="button" role="tab" data-land-tab="ops" aria-selected="false">Ops Modes</button>
-            <button class="spec-tab" type="button" role="tab" data-land-tab="evidence" aria-selected="false">Evidence</button>
-          </div>
-          <pre class="spec-code" id="land-code"></pre>
-          <div class="spec-output" id="land-output"></div>
-        </article>
-      </section>
-
-      <section class="spec-two-col">
-        <article class="spec-card">
-          <header class="spec-card-head">
-            <h2>What You Can Do</h2>
-          </header>
-          <div class="landing-list">
-            <p><strong>Operate the queue:</strong> prioritize cases, transition workflow stages, and attach analyst evidence.</p>
-            <p><strong>Track risk posture:</strong> inspect distribution, stage load, and vendor pressure in one view.</p>
-            <p><strong>Analyze campaigns:</strong> rank clusters by pressure, inspect linked cases, and dispatch escalation.</p>
-            <p><strong>Tune policy:</strong> compare threshold tradeoffs with precision/recall and overflow constraints.</p>
-          </div>
-        </article>
-
-        <article class="spec-card">
-          <header class="spec-card-head">
-            <h2>Page Logic</h2>
-          </header>
-          <div class="landing-list">
-            <p><strong>Operations Dashboard:</strong> primary work surface with charts, bars, filters, queue, and case console.</p>
-            <p><strong>Campaign Lab:</strong> cluster intelligence, threshold terminal, and strategy memo generation.</p>
-            <p><strong>Documentation Surfaces:</strong> problem framing, workflow explanation, and evidence traceability.</p>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <script>
-      const tabs = Array.from(document.querySelectorAll('[data-land-tab]'));
-      const code = document.getElementById('land-code');
-      const output = document.getElementById('land-output');
-
-      const blocks = {
-        flow: {
-          snippet: `Domain Generation\n  -> Impersonation Detection\n  -> Infrastructure Signals\n  -> Predictive Threat Scoring\n  -> Campaign Clustering\n  -> Case Creation\n  -> Enforcement Workflow\n  -> Reporting`,
-          out: 'Pipeline surfaces explainable, auditable outputs at each stage.',
-        },
-        ops: {
-          snippet: `Operations Dashboard\n  - Risk distribution + stage load\n  - Execution queue + case console\n  - Vendor pressure + autopilot triage`,
-          out: 'Use this as the day-to-day operator interface.',
-        },
-        evidence: {
-          snippet: `Evidence Discipline\n  - docs/worklog/YYYY-MM-DD.md\n  - docs/metrics/runs/*\n  - docs/metrics/threshold_tuning/*\n  - scripts/check-evidence.sh`,
-          out: 'Every claim should be tied to reproducible artifacts.',
-        },
-      };
-
-      function render(active) {
-        tabs.forEach((tab) => {
-          const on = tab.dataset.landTab === active;
-          tab.classList.toggle('is-active', on);
-          tab.setAttribute('aria-selected', String(on));
-        });
-        code.textContent = blocks[active].snippet;
-        output.textContent = blocks[active].out;
-      }
-
-      tabs.forEach((tab) => tab.addEventListener('click', () => render(tab.dataset.landTab)));
-      render('flow');
-    </script>
+    </div>
   </body>
 </html>

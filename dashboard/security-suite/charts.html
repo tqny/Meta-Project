@@ -11,13 +11,13 @@
     <div class="ss-page">
       <div class="ss-shell">
         <aside class="ss-rail">
-          <div class="ss-logo" aria-hidden="true">BG</div>
+          <button class="ss-logo" type="button" data-brand-trigger aria-label="About Speculo">S</button>
           <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
             <a class="ss-icon-link" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
             <a class="ss-icon-link" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
-            <a class="ss-icon-link is-active" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link is-active" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigate</span></a>
             <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
-            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforce</span></a>
           </nav>
         </aside>
 
@@ -25,26 +25,20 @@
           <header class="ss-topbar">
             <div class="ss-topbar-row">
               <div>
-                <p class="ss-page-kicker">Page 3 / Case Detail + Explainability</p>
-                <h1 class="ss-page-title">Case Investigation View</h1>
+                <h1 class="ss-page-title">Case Investigation</h1>
               </div>
-              <div class="ss-actions">
-                <a class="ss-link-btn ghost" href="./table.html">Back to Queue</a>
+              <div class="ss-actions ss-actions-note ss-actions-note-help">
+                <button id="investigation-page-help" class="ss-icon-btn ss-help-btn" type="button" data-explainer-trigger="investigation.page" aria-label="Explain Investigation page">?</button>
               </div>
             </div>
-            <nav class="ss-page-tabs" aria-label="Workflow Pages">
-              <a class="ss-page-tab" href="./security-overview.html">1. Operations Overview</a>
-              <a class="ss-page-tab" href="./table.html">2. Case Queue</a>
-              <a class="ss-page-tab is-active" href="./charts.html">3. Case Investigation</a>
-              <a class="ss-page-tab" href="./heatmap.html">4. Domain Portfolio</a>
-              <a class="ss-page-tab" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
-            </nav>
             <div class="ss-topbar-row">
-              <label class="ss-field">
-                <span>Select Case</span>
-                <select id="investigation-case-select" class="ss-select"></select>
-              </label>
-              <p id="investigation-meta" class="ss-subtle"></p>
+              <div class="ss-controls ss-controls-investigation">
+                <label class="ss-field">
+                  <span>Select Case</span>
+                  <select id="investigation-case-select" class="ss-select"></select>
+                </label>
+                <p id="investigation-meta" class="ss-subtle ss-topbar-meta"></p>
+              </div>
             </div>
           </header>
 
@@ -52,32 +46,107 @@
             <div id="investigation-empty" class="ss-empty">No case selected. Open a case from the queue to review evidence and actions.</div>
 
             <div id="investigation-panel" class="ss-grid ss-hidden">
-              <div class="ss-two-col ss-two-col-main">
-                <article class="ss-card">
-                  <div class="ss-card-title-row"><h2 class="ss-card-title">Case Information</h2></div>
-                  <div id="investigation-case-grid" class="ss-kv-grid"></div>
-                  <h3 class="ss-subtitle">Domain / Asset Context</h3>
-                  <div id="investigation-asset-grid" class="ss-kv-grid"></div>
-                </article>
-
-                <article class="ss-card">
-                  <div class="ss-card-title-row"><h2 class="ss-card-title">AI Assist Panel</h2></div>
-                  <p id="investigation-ai-summary" class="ss-subtle"></p>
-                  <p id="investigation-ai-category" class="ss-subtle"></p>
-                  <p id="investigation-ai-action" class="ss-subtle"></p>
-                  <h3 class="ss-subtitle">Action Buttons</h3>
-                  <div class="ss-actions">
-                    <button id="investigation-send-vendor" class="ss-btn primary" type="button">Send Vendor Request</button>
-                    <button id="investigation-escalate-legal" class="ss-btn" type="button">Escalate to Legal</button>
-                    <button id="investigation-close-case" class="ss-btn ghost" type="button">Close Case</button>
+              <article class="ss-card ss-investigation-board">
+                <div class="ss-card-head">
+                  <div class="ss-card-head-main">
+                    <p class="ss-section-kicker">Decision Explanation Surface</p>
+                    <div class="ss-card-title-row">
+                      <h2 class="ss-card-title">Signal Development &amp; Recommendation</h2>
+                      <p id="investigation-board-summary" class="ss-subtle"></p>
+                    </div>
                   </div>
-                </article>
-              </div>
+                  <button id="investigation-surface-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="investigation.signal_recommendation" aria-label="Explain Signal Development and Recommendation">?</button>
+                </div>
 
-              <div class="ss-two-col ss-two-col-main">
+                <div class="ss-investigation-context-band">
+                  <div>
+                    <p class="ss-field-label">Case Context</p>
+                    <div id="investigation-case-grid" class="ss-kv-grid ss-kv-grid-compact"></div>
+                  </div>
+                  <div>
+                    <p class="ss-field-label">Asset Context</p>
+                    <div id="investigation-asset-grid" class="ss-kv-grid ss-kv-grid-compact"></div>
+                  </div>
+                </div>
+
+                <div class="ss-investigation-hero-grid">
+                  <div class="ss-investigation-analytics">
+                    <div class="ss-investigation-control-row">
+                      <div class="ss-chip-row">
+                        <button class="ss-pill is-active" type="button" data-investigation-mode="all">All Signals</button>
+                        <button class="ss-pill" type="button" data-investigation-mode="detection">Detection</button>
+                        <button class="ss-pill" type="button" data-investigation-mode="evidence">Evidence</button>
+                        <button class="ss-pill" type="button" data-investigation-mode="enforcement">Enforcement</button>
+                      </div>
+                      <div class="ss-chip-row">
+                        <button class="ss-segment is-active" type="button" data-investigation-range="full">Full Trace</button>
+                        <button class="ss-segment" type="button" data-investigation-range="response">Response Window</button>
+                        <button class="ss-segment" type="button" data-investigation-range="focus">Recent Focus</button>
+                      </div>
+                    </div>
+
+                    <article class="ss-investigation-chart-card">
+                      <div class="ss-card-title-row">
+                        <h3 class="ss-card-title">Signal Development Over Time</h3>
+                        <p class="ss-subtle">Capsule bars show how signal strength and response readiness build across the case timeline.</p>
+                      </div>
+                      <div id="investigation-signal-empty" class="ss-hidden" aria-live="polite"></div>
+                      <svg id="investigation-signal-bars" class="ss-svg ss-svg-tall" viewBox="0 0 700 250" aria-label="Signal development chart"></svg>
+                    </article>
+
+                    <article class="ss-investigation-chart-card">
+                      <div class="ss-card-title-row">
+                        <h3 class="ss-card-title">Decision Trend Deck</h3>
+                        <div class="ss-chip-row ss-chip-row-compact ss-chart-legend">
+                          <span class="ss-legend-chip accent-primary">Threat Signal</span>
+                          <span class="ss-legend-chip accent-secondary">Evidence Confidence</span>
+                          <span class="ss-legend-chip accent-tertiary">Enforcement Readiness</span>
+                        </div>
+                      </div>
+                      <svg id="investigation-trend-chart" class="ss-svg" viewBox="0 0 700 220" aria-label="Decision trend chart"></svg>
+                    </article>
+                  </div>
+
+                  <aside class="ss-investigation-decision">
+                    <article class="ss-card ss-investigation-decision-card">
+                      <div class="ss-card-title-row">
+                        <h3 class="ss-card-title">Decision Module</h3>
+                        <button id="investigation-decision-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="investigation.decision_module" aria-label="Explain Decision Module">?</button>
+                      </div>
+                      <div class="ss-investigation-ai-block">
+                        <p class="ss-field-label">AI Case Summary</p>
+                        <p id="investigation-ai-summary" class="ss-subtle ss-queue-detail-copy"></p>
+                      </div>
+                      <div class="ss-investigation-ai-block">
+                        <p class="ss-field-label">Suggested Classification</p>
+                        <p id="investigation-ai-category" class="ss-subtle ss-queue-detail-copy"></p>
+                      </div>
+                      <div class="ss-investigation-ai-block">
+                        <p class="ss-field-label">Suggested Enforcement Action</p>
+                        <p id="investigation-ai-action" class="ss-subtle ss-queue-detail-copy"></p>
+                      </div>
+                      <div class="ss-actions ss-actions-stack">
+                        <button id="investigation-send-vendor" class="ss-btn primary" type="button">Send Vendor Request</button>
+                        <button id="investigation-escalate-legal" class="ss-btn" type="button">Escalate to Legal</button>
+                        <button id="investigation-close-case" class="ss-btn ghost" type="button">Close Case</button>
+                      </div>
+                    </article>
+                  </aside>
+                </div>
+              </article>
+
+              <div class="ss-investigation-support-grid">
                 <article class="ss-card">
                   <div class="ss-card-title-row"><h2 class="ss-card-title">Evidence Links</h2></div>
                   <ul id="investigation-evidence" class="ss-list"></ul>
+                </article>
+
+                <article class="ss-card">
+                  <div class="ss-card-title-row">
+                    <h2 class="ss-card-title">Decision Trace</h2>
+                    <button id="investigation-trace-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="investigation.decision_trace" aria-label="Explain Decision Trace">?</button>
+                  </div>
+                  <ol id="investigation-timeline" class="ss-timeline"></ol>
                 </article>
 
                 <article class="ss-card">
@@ -85,11 +154,6 @@
                   <ul id="investigation-enforcement-log" class="ss-list"></ul>
                 </article>
               </div>
-
-              <article class="ss-card">
-                <div class="ss-card-title-row"><h2 class="ss-card-title">Case Timeline</h2></div>
-                <ol id="investigation-timeline" class="ss-timeline"></ol>
-              </article>
             </div>
           </section>
         </main>

@@ -37,7 +37,7 @@ def _ensure_run_exists(index_path: Path, runs_dir: Path) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Build BrandGuard V1 dashboard data payload")
+    parser = argparse.ArgumentParser(description="Build BrandGuard product payload from indexed runs")
     parser.add_argument(
         "--run-id",
         type=str,
@@ -53,8 +53,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "dashboard" / "data" / "product-v1.json",
-        help="Dashboard payload output path",
+        default=ROOT / "output" / "product-v1.json",
+        help="Product payload output path",
     )
     parser.add_argument(
         "--tuning-artifact",

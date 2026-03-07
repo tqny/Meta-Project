@@ -11,76 +11,99 @@
     <div class="ss-page">
       <div class="ss-shell">
         <aside class="ss-rail">
-          <div class="ss-logo" aria-hidden="true">BG</div>
+          <button class="ss-logo" type="button" data-brand-trigger aria-label="About Speculo">S</button>
           <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
             <a class="ss-icon-link is-active" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
             <a class="ss-icon-link" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
-            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigate</span></a>
             <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
-            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforce</span></a>
           </nav>
         </aside>
 
         <main class="ss-main">
           <header class="ss-topbar">
-            <div class="ss-topbar-row">
-              <div>
-                <p class="ss-page-kicker">Page 1 / Executive Snapshot</p>
-                <h1 class="ss-page-title">Operations Overview</h1>
+            <div class="ss-topbar-row ss-topbar-row-overview-main">
+              <div class="ss-topbar-title-block">
+                <p class="ss-overview-title-prefix">Program</p>
+                <h1 class="ss-page-title">Overview</h1>
               </div>
-              <div class="ss-actions">
-                <a class="ss-link-btn primary" href="./table.html">Open Case Queue</a>
+              <div class="ss-overview-header-actions">
+                <button id="overview-page-help" class="ss-icon-btn ss-help-btn" type="button" data-explainer-trigger="overview.page" aria-label="Explain Overview page">?</button>
               </div>
-            </div>
-            <nav class="ss-page-tabs" aria-label="Workflow Pages">
-              <a class="ss-page-tab is-active" href="./security-overview.html">1. Operations Overview</a>
-              <a class="ss-page-tab" href="./table.html">2. Case Queue</a>
-              <a class="ss-page-tab" href="./charts.html">3. Case Investigation</a>
-              <a class="ss-page-tab" href="./heatmap.html">4. Domain Portfolio</a>
-              <a class="ss-page-tab" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
-            </nav>
-            <div class="ss-controls">
-              <button id="overview-range-all" class="ss-pill is-active" type="button" data-overview-range="all">All Activity</button>
-              <button id="overview-range-week" class="ss-pill" type="button" data-overview-range="week">Last 7 Days</button>
             </div>
           </header>
 
           <section class="ss-content ss-grid">
-            <div class="ss-kpi-row ss-kpi-compact">
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Open Cases</p><h2 id="overview-kpi-open">0</h2></article>
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">High Priority Incidents</p><h2 id="overview-kpi-high">0</h2></article>
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Domains Flagged This Week</p><h2 id="overview-kpi-domains">0</h2></article>
-            </div>
+            <article class="ss-card ss-overview-hero-card">
+              <div class="ss-card-head">
+                <div class="ss-card-head-main">
+                  <p class="ss-section-kicker">Program Health Surface</p>
+                  <div class="ss-card-title-row">
+                    <h2 class="ss-card-title">Threat Volume &amp; Response Movement</h2>
+                  </div>
+                </div>
+                <button id="overview-health-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="overview.program_health_surface" aria-label="Explain Program Health Surface">?</button>
+              </div>
 
-            <div class="ss-kpi-row ss-kpi-compact">
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Vendor SLA Breaches</p><h2 id="overview-kpi-breaches">0</h2></article>
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Average Time to Triage</p><h2 id="overview-kpi-triage">0h</h2></article>
-              <article class="ss-card ss-kpi-card"><p class="ss-subtle">Average Time to Close</p><h2 id="overview-kpi-close">0h</h2></article>
-            </div>
+              <div class="ss-overview-hero-grid">
+                <div class="ss-overview-chart-panel">
+                  <div class="ss-overview-chart-head">
+                    <div class="ss-overview-chart-copy">
+                      <p class="ss-field-label">Threat Movement</p>
+                    </div>
+                    <div class="ss-overview-chart-actions">
+                      <div class="ss-chart-legend" role="group" aria-label="Threat movement series">
+                        <button class="ss-legend-chip ss-legend-domains" type="button" data-overview-series="domains">Domains Flagged</button>
+                        <button class="ss-legend-chip ss-legend-cases" type="button" data-overview-series="cases">Cases Opened</button>
+                        <button class="ss-legend-chip ss-legend-closures" type="button" data-overview-series="resolved">Actions Resolved</button>
+                      </div>
+                      <button id="overview-summary-trigger" class="ss-icon-btn ss-help-btn ss-summary-btn ss-panel-help-btn" type="button" aria-label="Open Program Health summary">★</button>
+                      <button id="overview-movement-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="overview.threat_movement" aria-label="Explain Threat Movement">?</button>
+                    </div>
+                  </div>
+                  <div class="ss-overview-chart-body">
+                    <div id="overview-chart-stage" class="ss-overview-chart-stage">
+                      <svg id="overview-volume-line" class="ss-svg ss-svg-tall" role="img" aria-label="Threat volume and response movement"></svg>
+                      <div id="overview-movement-tooltip" class="ss-overview-tooltip" role="status" aria-live="polite" hidden></div>
+                    </div>
+                    <div id="overview-movement-deltas" class="ss-overview-delta-strip ss-overview-delta-rail" aria-label="Threat movement period deltas"></div>
+                  </div>
+                  <div class="ss-overview-chart-footer">
+                    <div class="ss-controls ss-controls-overview-chart">
+                      <button id="overview-range-all" class="ss-pill ss-pill-compact ss-overview-range-pill is-active" type="button" data-overview-range="all">All Activity</button>
+                      <button id="overview-range-week" class="ss-pill ss-pill-compact ss-overview-range-pill" type="button" data-overview-range="week">Last 7 Days</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-            <div class="ss-two-col ss-two-col-main">
+            <div class="ss-support-grid ss-support-grid-overview">
+              <aside class="ss-overview-briefing">
+                <div class="ss-overview-briefing-card">
+                  <div class="ss-card-title-row ss-card-title-row-help">
+                    <h2 class="ss-card-title">Executive Briefing</h2>
+                    <button id="overview-briefing-help" class="ss-icon-btn ss-help-btn ss-panel-help-btn" type="button" data-explainer-trigger="overview.executive_briefing" aria-label="Explain Executive Briefing">?</button>
+                  </div>
+                  <ul id="overview-watchlist" class="ss-list"></ul>
+                </div>
+              </aside>
+
               <article class="ss-card">
-                <div class="ss-card-title-row"><h2 class="ss-card-title">Threat Volume Over Time</h2></div>
-                <svg id="overview-volume-line" class="ss-svg" role="img" aria-label="Threat volume and closure trend"></svg>
-              </article>
-
-              <article class="ss-card">
-                <div class="ss-card-title-row"><h2 class="ss-card-title">Threats by Channel</h2></div>
+                <div class="ss-card-title-row">
+                  <h2 class="ss-card-title">Threats by Channel</h2>
+                  <p class="ss-subtle">Cross-channel distribution in scope</p>
+                </div>
                 <div id="overview-channel-bars" class="ss-bar-list"></div>
               </article>
-            </div>
 
-            <div class="ss-two-col ss-two-col-main">
               <article class="ss-card">
-                <div class="ss-card-title-row"><h2 class="ss-card-title">Threats by Type</h2></div>
+                <div class="ss-card-title-row">
+                  <h2 class="ss-card-title">Threats by Type</h2>
+                  <p class="ss-subtle">Dominant abuse patterns</p>
+                </div>
                 <div id="overview-type-bars" class="ss-bar-list"></div>
-              </article>
-
-              <article class="ss-card">
-                <div class="ss-card-title-row"><h2 class="ss-card-title">Executive Summary</h2></div>
-                <p id="overview-summary" class="ss-subtle"></p>
-                <h3 class="ss-subtitle">Watchlist</h3>
-                <ul id="overview-watchlist" class="ss-list"></ul>
               </article>
             </div>
           </section>

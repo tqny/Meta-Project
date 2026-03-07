@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brand Protection Control Center — Interface Map</title>
+    <title>Brand Protection Control Center — Active Workflow Map</title>
     <link rel="stylesheet" href="../../design-system/saas-security-neon/tokens.css" />
     <link rel="stylesheet" href="./assets/security-suite.css" />
   </head>
@@ -11,13 +11,13 @@
     <div class="ss-page">
       <div class="ss-shell">
         <aside class="ss-rail">
-          <div class="ss-logo" aria-hidden="true">BG</div>
+          <button class="ss-logo" type="button" data-brand-trigger aria-label="About Speculo">S</button>
           <nav class="ss-rail-nav" aria-label="Brand Protection Control Center pages">
             <a class="ss-icon-link" href="./security-overview.html" aria-label="Operations Overview"><span class="ss-icon-letter">1</span><span class="ss-icon-text">Overview</span></a>
             <a class="ss-icon-link" href="./table.html" aria-label="Case Queue"><span class="ss-icon-letter">2</span><span class="ss-icon-text">Queue</span></a>
-            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigation</span></a>
+            <a class="ss-icon-link" href="./charts.html" aria-label="Case Investigation"><span class="ss-icon-letter">3</span><span class="ss-icon-text">Investigate</span></a>
             <a class="ss-icon-link" href="./heatmap.html" aria-label="Domain Portfolio"><span class="ss-icon-letter">4</span><span class="ss-icon-text">Domains</span></a>
-            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforcement</span></a>
+            <a class="ss-icon-link" href="./ui-elements.html" aria-label="Enforcement and Vendor Tracker"><span class="ss-icon-letter">5</span><span class="ss-icon-text">Enforce</span></a>
           </nav>
         </aside>
 
@@ -25,18 +25,31 @@
           <header class="ss-topbar">
             <div class="ss-topbar-row">
               <div>
-                <p class="ss-page-kicker">Brand Protection Control Center (Demo)</p>
-                <h1 class="ss-page-title">Five-Page Workflow Map</h1>
+                <h1 class="ss-page-title">Workflow Map, Not the Live App Start</h1>
               </div>
               <div class="ss-actions">
-                <a class="ss-link-btn ghost" href="../index.html">Back to Dashboard Home</a>
+                <a class="ss-link-btn ghost" href="../../index.html">Back to Project Home</a>
               </div>
             </div>
           </header>
 
           <section class="ss-content ss-grid">
             <article class="ss-card">
-              <div class="ss-card-title-row"><h2 class="ss-card-title">MVP Pages</h2></div>
+              <div class="ss-card-title-row">
+                <h2 class="ss-card-title">Start the Live Dashboard Here</h2>
+                <p class="ss-subtle">This page is the route map for the active `security-suite` build. The actual walkthrough starts at Operations Overview.</p>
+              </div>
+              <div class="ss-kpi-row">
+                <a class="ss-link-btn primary" href="./security-overview.html">Open Operations Overview</a>
+                <a class="ss-link-btn" href="./table.html">Jump to Case Queue</a>
+              </div>
+            </article>
+
+            <article class="ss-card">
+              <div class="ss-card-title-row">
+                <h2 class="ss-card-title">Workflow Map</h2>
+                <p class="ss-subtle">Use this only as a navigation map when you want to jump directly to a specific page in the active app.</p>
+              </div>
               <div class="ss-kpi-row">
                 <a class="ss-link-btn primary" href="./security-overview.html">1. Operations Overview</a>
                 <a class="ss-link-btn primary" href="./table.html">2. Threat Intake &amp; Case Queue</a>
@@ -45,7 +58,7 @@
               <div class="ss-kpi-row">
                 <a class="ss-link-btn primary" href="./heatmap.html">4. Domain Portfolio Dashboard</a>
                 <a class="ss-link-btn primary" href="./ui-elements.html">5. Enforcement &amp; Vendor Tracker</a>
-                <a class="ss-link-btn" href="../../design-system/saas-security-neon/INTEGRATION.md" target="_blank" rel="noreferrer">Bucket Integration Notes</a>
+                <a class="ss-link-btn" href="../../design-system/saas-security-neon/INTEGRATION.md" target="_blank" rel="noreferrer">Token Integration Notes</a>
               </div>
             </article>
           </section>
